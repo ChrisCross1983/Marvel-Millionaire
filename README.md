@@ -217,6 +217,7 @@ The live link can be found here - https://chriscross1983.github.io/Home-of-wildl
 
   Favicon Title - realfavicongenerator.net
   Favicon Document - fontawesome.com
-  
+  Joker Images - freepik.com
+
   ### Acknowledgements
 
