@@ -7,16 +7,79 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Marvel Millionaire</title>
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon/favicon-16x16.png"
+    />
     <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-    <link rel="mask-icon" href="assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link
+      rel="mask-icon"
+      href="assets/images/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <h1>Marvel Millionaire</h1>
+    <h1 class="heading">
+      <img class="logo" src="" alt="logo" /> Marvel Millionaire
+    </h1>
+    <div id="game-area">
+      <div id="question-box">Question</div>
+      <div id="answers-box">
+        <p id="answer1"><i>A</i> Text of answer A</p>
+        <p id="answer2"><i>B</i> Text of answer B</p>
+        <p id="answer3"><i>C</i> Text of answer C</p>
+        <p id="answer4"><i>D</i> Text of answer D</p>
+      </div>
+      <button data-type="submit" class="btn btn-green">Submit Answer</button>
+      <button data-type="take_money" class="btn btn-red">Take the money</button>
+    </div>
+    <div id="joker-box">
+      <img src="" alt="" id="joker1" />
+      <img src="" alt="" id="joker2" />
+      <img src="" alt="" id="joker3" />
+      <img src="" alt="" id="joker4" />
+    </div>
+    <div id="countdown-box">
+      Time: <span id="seconds">60</span> Seconds
+      <img id="time-bar" src="" alt="time bar" />
+    </div>
+    <div id="score-box">
+      <img id="score-bar" src="" alt="score bar" />
+      <p>1 M</p>
+      <p>500 k</p>
+      <p>250 k</p>
+      <p>125 k</p>
+      <p>64 k</p>
+      <p>32 k</p>
+      <p>16 k</p>
+      <p>8 k</p>
+      <p>4 k</p>
+      <p>2 k</p>
+      <p>1 k</p>
+      <p>0.5 k</p>
+      <p>0 k</p>
+    </div>
+    <button data-type="exit" class="btn btn-red"><i>X</i> Exit Game</button>
+    <button data-type="next" class="btn btn-red">
+      Next Question <i>Arrow right</i>
+    </button>
+    <img id="hero" />
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>

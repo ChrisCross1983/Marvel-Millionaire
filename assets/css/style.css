@@ -1,3 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+div, p {
+    border: 1px solid black;
+}
+
 body {
+
     background-color: lightblue;
 }
