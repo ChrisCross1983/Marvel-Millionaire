@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>Marvel Millionaire</title>
     <!-- Favicon -->
     <link
@@ -35,18 +40,48 @@
   </head>
   <body>
     <h1 class="heading">
-      <img class="logo" src="" alt="logo" /> Marvel Millionaire
+        <i class="fa-solid fa-spider"></i> Marvel Millionaire
     </h1>
-    <div id="game-area">
-      <div id="question-box">Question</div>
-      <div id="answers-box">
-        <p id="answer1"><i>A</i> Text of answer A</p>
-        <p id="answer2"><i>B</i> Text of answer B</p>
-        <p id="answer3"><i>C</i> Text of answer C</p>
-        <p id="answer4"><i>D</i> Text of answer D</p>
+    <div class="game-wrapper">
+      <div id="game-area">
+        <div id="question-box">Question</div>
+        <div id="answer-container">
+          <div class="answer-box">
+            <i class="fa-solid fa-a"></i>
+            <input type="radio" id="answer1" name="answers" />
+            <label for="answer1"></label>
+            <p class="answer-text">Text of answer A</p>
+          </div>
+          <div class="answer-box">
+            <i class="fa-solid fa-b"></i>
+            <input type="radio" id="answer2" name="answers" />
+            <label for="answer2"></label>
+            <p class="answer-text">Text of answer B</p>
+          </div>
+          <div class="answer-box">
+            <i class="fa-solid fa-c"></i>
+            <input type="radio" id="answer3" name="answers" />
+            <label for="answer3"></label>
+            <p class="answer-text">
+              Text of answer C has to be larger to fit the box
+            </p>
+          </div>
+          <div class="answer-box">
+            <i class="fa-solid fa-d"></i>
+            <input type="radio" id="answer4" name="answers" />
+            <label for="answer4"></label>
+            <p class="answer-text">Text of answer D</p>
+          </div>
+        </div>
+        <div class="button-box">
+          <button data-type="submit" class="btn btn-green">
+            Submit Answer
+          </button>
+          <button data-type="take_money" class="btn btn-red">
+            Take the money
+          </button>
+        </div>
       </div>
-      <button data-type="submit" class="btn btn-green">Submit Answer</button>
-      <button data-type="take_money" class="btn btn-red">Take the money</button>
     </div>
     <div id="joker-box">
       <img src="" alt="" id="joker1" />
@@ -74,10 +109,12 @@
       <p>0.5 k</p>
       <p>0 k</p>
     </div>
-    <button data-type="exit" class="btn btn-red"><i>X</i> Exit Game</button>
-    <button data-type="next" class="btn btn-red">
-      Next Question <i>Arrow right</i>
-    </button>
+    <div class="button-box">
+      <button data-type="exit" class="btn btn-red"><i>X</i> Exit Game</button>
+      <button data-type="next" class="btn btn-red">
+        Next Question <i>Arrow right</i>
+      </button>
+    </div>
     <img id="hero" />
 
     <script src="assets/js/script.js"></script>

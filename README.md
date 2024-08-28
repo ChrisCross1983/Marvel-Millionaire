@@ -214,6 +214,9 @@ The live link can be found here - https://chriscross1983.github.io/Home-of-wildl
 ## Credits
   ### Content and Code
   ### Media
-  Favicon - realfavicongenerator.net
+
+  Favicon Title - realfavicongenerator.net
+  Favicon Document - fontawesome.com
+  
   ### Acknowledgements
 
