@@ -45,9 +45,14 @@ p {
 button {
   border-radius: 25px;
   min-height: 40px;
-  min-width: fit-content;
+  min-width: 100px;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .btn-red {
@@ -74,81 +79,82 @@ button {
 /* Flip Effect */
 
 .flip-box-wrapper {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 10vh;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .flip-box {
-    background-color: transparent;
-    width: 300px;
-    height: 500px;
-    perspective: 1000px;
-    flex: 1 1 300px;
-    max-width: 100%;
-    overflow: hidden;
-  }
-  
-  .flip-box-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    transform-style: preserve-3d;
-    transition: transform 0.7s ease-in-out;
-  }
-  
-  .flip-box:hover .flip-box-inner {
-      transform: rotateY(180deg);
-    }
-  
-  .flip-box-front,
-  .flip-box-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    max-width: 400px;
-    max-height: 500px;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .flip-box-front {
-    transform: rotateY(0deg);
-  }
-  
-  .flip-box-back {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border-radius: 25px;
-    transform: rotateY(180deg);
-  }
-  
-  .img_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  }
-  
-  #play,
-  #rules {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    max-height: 500px;
-    min-width: 150px;
-    border-radius: 25px;
-    border: 1px solid whitesmoke;
-  }
-  
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 10vh;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  flex: 1 1 300px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease-in-out;
+  cursor: pointer;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  max-height: 500px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flip-box-front {
+  transform: rotateY(0deg);
+}
+
+.flip-box-back {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 25px;
+  transform: rotateY(180deg);
+}
+
+.img_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#play,
+#rules {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  max-height: 500px;
+  min-width: 150px;
+  border-radius: 25px;
+  border: 1px solid whitesmoke;
+}
+
 /* Gamepage Styling */
 
 .game-wrapper {
@@ -228,7 +234,7 @@ button {
 }
 
 .joker-icon img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /* Score Styling */
@@ -245,6 +251,44 @@ button {
   gap: 20px;
 }
 
+/* Media Queries for larger screens */
+
+@media (min-width: 1024px) {
+    #joker-box {
+        gap: 30px;
+    }
+
+    .joker-icon img {
+        width: 80px;
+        height: 80px;
+    }
+
+    button {
+        min-width: 120px;
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .button-box {
+        gap: 40px;
+    }
+
+    #game-are {
+        max-width: 800px;
+    }
+
+    #question-box,
+    #answer-container {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .heading {
+        font-size: 36px;
+        margin: 40px 0 20px;
+    }
+}
+
 /* Media Queries for smaller Smartphone screens */
 @media (max-width: 630px) {
   .flip-box {
@@ -256,12 +300,51 @@ button {
   .flip-box-wrapper {
     top: 1vh;
   }
-
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .flip-box {
     width: 90%;
   }
 
+  #joker-box {
+    gap: 10px;
+  }
+
+  .joker-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  button {
+    min-width: 80px;
+  }
+
+  .button-box {
+    gap: 15px;
+  }
 }
+
+@media (max-width: 370px) {
+    #joker-box {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  
+    .joker-icon img {
+      width: 40px;
+      height: 40px; 
+    }
+  
+    button {
+      min-width: 70px;
+      font-size: 12px;
+    }
+  
+    .button-box {
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
