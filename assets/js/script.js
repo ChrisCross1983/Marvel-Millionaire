@@ -15,8 +15,10 @@ function closeModusBox() {
 function startGame(mode) {
     if (mode === 'normal') {
         alert('Starting Normal Version with 4 Jokers!');
+        window.location.href = 'game.html';
     } else if (mode === 'hard') {
         alert('Starting Hard Version with 3 Jokers!')
+        window.location.href = 'game.html';
     }
     closeModusBox();
 }

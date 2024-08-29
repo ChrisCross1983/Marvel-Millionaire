@@ -76,6 +76,11 @@ button:hover {
 
 /* Homepage Styling */
 
+a, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
 /* Flip Effect */
 
 .flip-box-wrapper {
@@ -276,7 +281,6 @@ button:hover {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 25px;
 }
 
 .modus-content h2 {
