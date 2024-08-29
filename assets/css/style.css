@@ -35,7 +35,7 @@ p {
 }
 
 .heading {
-  margin: 10px 0; 
+  margin: 30px 0 10px;
 }
 
 .fa-solid {
@@ -51,11 +51,15 @@ button {
 }
 
 .btn-red {
-    background-color: red;
+  background-color: red;
 }
 
 .btn-green {
-    background-color: green;
+  background-color: green;
+}
+
+.btn-gold {
+  background-color: gold;
 }
 
 .button-box {
@@ -65,12 +69,92 @@ button {
   gap: 30px;
 }
 
+/* Homepage Styling */
+
+/* Flip Effect */
+
+.flip-box-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10vh;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 500px;
+    perspective: 1000px;
+    flex: 1 1 300px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease-in-out;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+  
+  .flip-box-front,
+  .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 500px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .flip-box-front {
+    transform: rotateY(0deg);
+  }
+  
+  .flip-box-back {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 25px;
+    transform: rotateY(180deg);
+  }
+  
+  .img_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  #play,
+  #rules {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 500px;
+    min-width: 150px;
+    border-radius: 25px;
+    border: 1px solid whitesmoke;
+  }
+  
 /* Gamepage Styling */
 
 .game-wrapper {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
+}
 
 #game-area {
   max-width: 600px;
@@ -110,53 +194,74 @@ button {
 }
 
 .answer-text {
-    margin: 0;
-    color: white;
-    flex-grow: 1;
-  }
+  margin: 0;
+  color: white;
+  flex-grow: 1;
+}
 
-  /* Joker Styling */
+/* Joker Styling */
 
 #joker-box {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px auto;
-    padding: 10px;
-    width: 100%;
-  }
-  
-  .joker-icon {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .joker-icon img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-  
-  .joker-icon img:hover {
-    transform: scale(1.1);
-  }
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 600px;
+  width: 100%;
+}
 
-  /* Score Styling */
+.joker-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.joker-icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.joker-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* Score Styling */
 
 .extras-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #score-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Media Queries for smaller Smartphone screens */
+@media (max-width: 630px) {
+  .flip-box {
+    width: 80%;
+  }
+  body {
+    height: 140vh;
+  }
+  .flip-box-wrapper {
+    top: 1vh;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .flip-box {
+    width: 90%;
+  }
 
 }

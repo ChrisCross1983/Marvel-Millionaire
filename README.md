@@ -213,10 +213,13 @@ The live link can be found here - https://chriscross1983.github.io/Home-of-wildl
 
 ## Credits
   ### Content and Code
-  ### Media
 
+  How to rotate an img - https://www.w3schools.com/howto/howto_css_flip_image.asp
+  ### Media
+  Hero Background - wallpapers.com
   Favicon Title - realfavicongenerator.net
   Favicon Document - fontawesome.com
+
   Joker Images - freepik.com
 
   ### Acknowledgements
