@@ -76,9 +76,10 @@ button:hover {
 
 /* Homepage Styling */
 
-a, a:visited {
-    text-decoration: none;
-    color: white;
+a,
+a:visited {
+  text-decoration: none;
+  color: white;
 }
 
 /* Flip Effect */
@@ -214,8 +215,9 @@ a, a:visited {
 
 #joker-box {
   display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin: 20px auto;
   padding: 10px;
   max-width: 600px;
@@ -227,6 +229,7 @@ a, a:visited {
   border: none;
   cursor: pointer;
   padding: 0;
+  max-width: fit-content;
 }
 
 .joker-icon img {
@@ -261,136 +264,156 @@ a, a:visited {
 /* Game Modus */
 
 .modus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
 }
 
 .modus-content {
-    background: rgba(44, 48, 159, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    gap: 50px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  background: rgba(44, 48, 159, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  gap: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .modus-content h2 {
-    color: white;
-    text-shadow: none;
+  color: white;
+  text-shadow: none;
 }
 
-.modus-content button, {
-    color: white;
-    text-shadow: none;
+.modus-content button {
+  color: white;
+  text-shadow: none;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* Media Queries for larger screens */
 
 @media (min-width: 1024px) {
-    #joker-box {
-        gap: 30px;
-    }
+  #joker-box {
+    gap: 30px;
+  }
 
-    .joker-icon img {
-        width: 80px;
-        height: 80px;
-    }
+  .joker-icon img {
+    min-width: 100px;
+    min-height: 100px;
+  }
 
-    button {
-        min-width: 120px;
-        font-size: 18px;
-        padding: 15px;
-    }
+  button {
+    min-width: 120px;
+    font-size: 18px;
+    padding: 15px;
+  }
 
-    .button-box {
-        gap: 40px;
-    }
+  .button-box {
+    gap: 40px;
+  }
 
-    #game-are {
-        max-width: 800px;
-    }
+  #game-area {
+    max-width: 800px;
+  }
 
-    #question-box,
-    #answer-container {
-        padding: 20px;
-        font-size: 18px;
-    }
+  #joker-box {
+    max-width: 800px;
+    gap: 30px;
+  }
 
-    .heading {
-        font-size: 36px;
-        margin: 40px 0 20px;
-    }
+  #question-box,
+  #answer-container {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .heading {
+    font-size: 36px;
+    margin: 40px 0 20px;
+  }
 }
 
-/* Media Queries for smaller Smartphone screens */
+/* Media Queries for tablet landscape */
+
+@media (min-width: 631px) {
+  .joker-icon img {
+    width: 80px;
+    height: 80px;
+  }
+
+  #joker-box {
+    gap: 30px;
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+}
+}
+
+/* Media Queries for larg Smartphone screens */
+
 @media (max-width: 630px) {
   .flip-box {
     width: 80%;
   }
+
   body {
     height: 140vh;
   }
+
   .flip-box-wrapper {
     top: 1vh;
   }
+
+  .joker-icon img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #joker-box {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .heading {
+    margin-bottom: 20px;
+  }
 }
+
+/* Media Queries for small Smartphone screens */
 
 @media (max-width: 480px) {
   .flip-box {
     width: 90%;
   }
 
-  #joker-box {
-    gap: 10px;
-  }
-
-  .joker-icon img {
-    width: 50px;
-    height: 50px;
-  }
-
   button {
-    min-width: 80px;
+    max-width: 60px;
   }
 
   .button-box {
     gap: 15px;
   }
-}
 
-@media (max-width: 370px) {
-    #joker-box {
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-  
-    .joker-icon img {
-      width: 40px;
-      height: 40px; 
-    }
-  
-    button {
-      min-width: 70px;
-      font-size: 12px;
-    }
-  
-    .button-box {
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+ .joker-icon img {
+    width: 50px;
+    height: 50px;
   }
 
+  .button-box {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
