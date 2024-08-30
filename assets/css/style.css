@@ -318,7 +318,8 @@ a:visited {
     padding: 15px;
   }
 
-  div, p {
+  div,
+  p {
     font-size: 18px;
   }
 
@@ -382,7 +383,8 @@ a:visited {
     padding: 10px 0;
   }
 
-  button, p {
+  button,
+  p {
     font-size: 17px;
     min-width: 100px;
   }
@@ -400,7 +402,8 @@ a:visited {
     height: 140vh;
   }
 
-  #play, #rules {
+  #play,
+  #rules {
     max-width: 90%;
     max-height: 90%;
   }
@@ -420,7 +423,7 @@ a:visited {
     margin-bottom: 20px;
   }
 
-  .flip-box-wrapper {  
+  .flip-box-wrapper {
     gap: 0px;
   }
 
@@ -442,7 +445,8 @@ a:visited {
 /* Media Queries for small Smartphone screens */
 
 @media (max-width: 480px) {
-  #play, #rules {
+  #play,
+  #rules {
     max-width: 80%;
     max-height: 80%;
   }

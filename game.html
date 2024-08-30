@@ -44,7 +44,7 @@
     </h1>
     <div class="game-wrapper">
       <div id="game-area">
-        <div id="question-box">Question</div>
+        <div id="question-box"><p><b>Question</b></p></div>
         <div id="answer-container">
           <div class="answer-box">
             <i class="fa-solid fa-a"></i>
@@ -114,6 +114,18 @@
         </button>
       </div>
     </div>
-    <script src="assets/js/script.js"></script>
+
+    <!-- DOM Manipulation Area -->
+
+    <div id="ready-question" class="ready hidden">
+        <div class="ready-content">
+          <h2>Ready to rumble?</h2>
+          <p>Prepare for your ${numberOfQuestion} question and<br> remember to keep an eye on the countdown!</p>
+          <button id="btn-ready" class="btn btn-green">Yes!</button>
+        </div>
+      </div>
+
+    <!-- JavaScript File --> 
+    <script src="assets/js/script-game.js"></script>
   </body>
 </html>

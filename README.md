@@ -116,6 +116,7 @@ Example:
 
    - How to rotate an img - https://www.w3schools.com/howto/howto_css_flip_image.asp
    - How to load another page with JS - https://www.w3schools.com/jsref/event_onload.asp
+   - How to use session storage - https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
 
   ### Media
    - Hero Background - wallpapers.com

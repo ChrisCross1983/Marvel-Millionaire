@@ -1,41 +1,36 @@
-/* Show and Hide Game Modus */
+/* Question and Answer functionality */
 
-function showModusBox() {
-  const modus = document.getElementById("game-select");
-  modus.classList.remove("hidden");
+function showReadyQuestion() {
+  const ready = document.getElementById("ready-question");
+  ready.classList.remove("hidden");
 }
 
-function closeModusBox() {
-  const modus = document.getElementById("game-select");
-  modus.classList.add("hidden");
+function closeReadyQuestion() {
+  const ready = document.getElementById("ready-question");
+  ready.classList.add("hidden");
 }
 
-/* Start Game */
+if (window.location.pathname.includes("game.html")) {
+  window.addEventListener("DOMContentLoaded", function () {
+    showReadyQuestion();
 
-function startGame(mode) {
-  if (mode === "normal") {
-    alert("Starting Normal Version with 4 Jokers!");
-    window.location.href = "game.html";
-  } else if (mode === "hard") {
-    alert("Starting Hard Version with 3 Jokers!");
-    window.location.href = "game.html";
+    document.getElementById("btn-ready").addEventListener("click", function () {
+      closeReadyQuestion();
+      showQuestion(0);
+    });
+  });
+}
+
+function showQuestion(index) {
+  const questionParagraph = document.querySelector("#question-box p");
+  if (index < gameQuestions.length) {
+    questionParagraph.textContent = gameQuestions[index].question;
+  } else {
+    alert("No more Questions!");
   }
-  closeModusBox();
 }
 
-/* Event listener for starting the game & close the box */
-
-document.getElementById("play-button").addEventListener("click", showModusBox);
-
-document.getElementById("normal-mode").addEventListener("click", function () {
-  startGame("normal");
-});
-
-document.getElementById("hard-mode").addEventListener("click", function () {
-  startGame("hard");
-});
-
-/* Questions */
+/* Questions and Answers array */
 
 const gameQuestions = [
   {
