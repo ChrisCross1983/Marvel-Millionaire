@@ -88,6 +88,12 @@ const gameQuestions = [
   },
 ];
 
+/* Score array */
+
+const scoreMoney = [
+    "0K", "0.5K", "1K", "2K", "4K", "8K", "16K", "32K", "64K", "128K", "250K", "500K", "1M" 
+];
+
 /* Question functionality */
 
 let currentQuestionIndex = 0;
@@ -119,6 +125,7 @@ if (window.location.pathname.includes("game.html")) {
 }
 
 function showQuestion(index) {
+    /* Deselect Radio Button */
   const deselect = document.querySelectorAll('input[name="answers"]');
   deselect.forEach(radio => radio.checked = false);
 
@@ -168,6 +175,8 @@ function correctAnswer() {
 
     if (selectedAnswer === correct) {
       alert("You're right buddy!");
+      increaseScore();
+      showScore();
     } else {
       alert("Sorry, you're wrong!");
     }
@@ -207,3 +216,22 @@ function remainingTime() {
     }
   }, 1000);
 }
+
+/* Score system */
+
+let currentScoreIndex = 0;
+
+function increaseScore() {
+ if (currentScoreIndex < scoreMoney.length - 1) {
+    currentScoreIndex++;
+ }
+}
+
+function showScore() {
+    const currentScore = document.getElementById("current-score")
+    const nextScore = document.getElementById("next-score");
+
+    currentScore.innerHTML = scoreMoney[currentScoreIndex];
+    nextScore.innerHTML = scoreMoney[currentScoreIndex + 1] || "1M"
+    };
+

@@ -41,7 +41,7 @@
   <body>
     <h1 class="heading" id="header-home">
       <a href="index.html"
-        ><i class="fa-solid fa-spider"></i> Marvel Millionaire</a
+        ><i class="fa-regular fa-gem"></i> Marvel Millionaire</a
       >
     </h1>
     <div class="game-wrapper">
@@ -51,30 +51,43 @@
           <div class="answer-box">
             <i class="fa-solid fa-a"></i>
             <input type="radio" id="answer1" name="answers" />
-            <label for="answer1" class="answer-text" id="label1">Text of answer A</label>
+            <label for="answer1" class="answer-text" id="label1"
+              >Text of answer A</label
+            >
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-b"></i>
             <input type="radio" id="answer2" name="answers" />
-            <label for="answer2" class="answer-text" id="label2">Text of answer B</label>
+            <label for="answer2" class="answer-text" id="label2"
+              >Text of answer B</label
+            >
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-c"></i>
             <input type="radio" id="answer3" name="answers" />
-            <label for="answer3" class="answer-text" id="label3">Text of answer C</label>
+            <label for="answer3" class="answer-text" id="label3"
+              >Text of answer C</label
+            >
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-d"></i>
             <input type="radio" id="answer4" name="answers" />
-            <label for="answer4" class="answer-text" id="label4">Text of answer D</label>
+            <label for="answer4" class="answer-text" id="label4"
+              >Text of answer D</label
+            >
           </div>
         </div>
         <div class="button-box">
           <button id="submit-btn" data-type="submit" class="btn btn-green">
+            <i class="fa-regular fa-envelope"></i>
             Submit Answer
           </button>
           <button data-type="take_money" class="btn btn-gold">
+            <i class="fa-solid fa-sack-dollar"></i>
             Take the money
+          </button>
+          <button id="next-question" data-type="next" class="btn btn-blue">
+            Next Question <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
       </div>
@@ -98,16 +111,13 @@
         <p id="timer">Remaining Time: <span id="seconds">60</span> Seconds</p>
       </div>
       <div id="score-box">
-        <img id="score-bar" src="" alt="score bar" />
-        <p>actual Score</p>
-        <p>Next Win</p>
+        <img src="" alt="score bar" />
+        <p id="current-score">actual Score</p>
+        <p id="next-score">Next Win</p>
       </div>
       <div class="button-box">
         <button data-type="exit" class="btn btn-red">
           <i class="fa-regular fa-circle-xmark"></i> Exit Game
-        </button>
-        <button id="next-question" data-type="next" class="btn btn-green">
-          Next Question <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -118,7 +128,8 @@
       <div class="hidden-content">
         <h2>Ready to rumble?</h2>
         <p>
-          User information to prepare for game start and which is the current question!
+          User information to prepare for game start and which is the current
+          question!
         </p>
         <button id="btn-ready" class="btn btn-green">Yes!</button>
       </div>
