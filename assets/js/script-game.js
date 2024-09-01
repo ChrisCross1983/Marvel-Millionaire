@@ -1,7 +1,14 @@
-/* Question and Answer functionality */
+/* Question functionality */
+
+let currentQuestionIndex = 0;
 
 function showReadyQuestion() {
   const ready = document.getElementById("ready-question");
+  const readyText = document.querySelector("#ready-question p");
+
+  readyText.innerHTML = `Prepare for your ${
+    currentQuestionIndex + 1
+  } question and<br /> remember to keep an eye on the countdown!`;
   ready.classList.remove("hidden");
 }
 
@@ -22,120 +29,136 @@ if (window.location.pathname.includes("game.html")) {
 }
 
 function showQuestion(index) {
-  const questionParagraph = document.querySelector("#question-box p");
+  const questionHeader = document.querySelector("#question-box h3");
   if (index < gameQuestions.length) {
-    questionParagraph.textContent = gameQuestions[index].question;
+    questionHeader.textContent = gameQuestions[index].question;
+    showAnswers(index);
   } else {
     alert("No more Questions!");
   }
 }
+
+/* Answer functionality */
+
+function showAnswers(index) {
+  const answerA = document.getElementById("answer-a");
+  const answerB = document.getElementById("answer-b");
+  const answerC = document.getElementById("answer-c");
+  const answerD = document.getElementById("answer-d");
+
+  if (index < gameQuestions.length) {
+    answerA.textContent = gameQuestions[index].options[0];
+    answerB.textContent = gameQuestions[index].options[1];
+    answerC.textContent = gameQuestions[index].options[2];
+    answerD.textContent = gameQuestions[index].options[3];
+
+    remainingTime();
+  } else {
+    console.log("Invalid question index.");
+  }
+}
+
+/* Countdown */
+
+function remainingTime() {
+    let countdown = 60;
+    let timer = setInterval(function() {
+        countdown--;
+        console.log(countdown);
+        if (countdown === 0) {
+            clearInterval(timer);
+            console.log("Countdown finished");
+        }
+    },1000);
+}
+
 
 /* Questions and Answers array */
 
 const gameQuestions = [
   {
     question: "What is the name of Thor's hammer?",
-    options: ["A: Mjolnir", "B: Stormbreaker", "C: Aegis", "D: Gungnir"],
-    correct: "A",
+    options: ["Mjolnir", "Stormbreaker", "Aegis", "Gungnir"],
+    correct: "Mjolnir",
   },
   {
     question: "What is Tony Stark's superhero name?",
-    options: ["A: Iron Fist", "B: Iron Man", "C: War Machine", "D: Hulk"],
-    correct: "B",
+    options: ["Iron Fist", "Iron Man", "War Machine", "Hulk"],
+    correct: "Iron Man",
   },
   {
     question:
       "What material is Captain America's shield made of in the comics?",
-    options: [
-      "A: Shield of Valor",
-      "B: Aegis",
-      "C: Vibranium",
-      "D: Golden Shield",
-    ],
-    correct: "C",
+    options: ["Shield of Valor", "Aegis", "Vibranium", "Golden Shield"],
+    correct: "Vibranium",
   },
   {
     question: "Who is the King of Wakanda?",
-    options: [
-      "A: Black Panther",
-      "B: Thor",
-      "C: Spider-Man",
-      "D: Doctor Strange",
-    ],
-    correct: "A",
+    options: ["Black Panther", "Thor", "Spider-Man", "Doctor Strange"],
+    correct: "Black Panther",
   },
   {
     question: "What is the name of Tony Stark's AI assistant before JARVIS?",
-    options: ["A: HOMER", "B: FRIDAY", "C: DUM-E", "D: P.E.P.P.E.R."],
-    correct: "B",
+    options: ["HOMER", "FRIDAY", "DUM-E", "P.E.P.P.E.R."],
+    correct: "FRIDAY",
   },
   {
     question: "Which Infinity Stone has the power to manipulate time?",
-    options: [
-      "A: Mind Stone",
-      "B: Soul Stone",
-      "C: Power Stone",
-      "D: Time Stone",
-    ],
-    correct: "D",
+    options: ["Mind Stone", "Soul Stone", "Power Stone", "Time Stone"],
+    correct: "Time Stone",
   },
   {
     question:
       "Which superhero is also known as the 'Master of the Mystic Arts'?",
-    options: ["A: Thor", "B: Doctor Strange", "C: Scarlet Witch", "D: Loki"],
-    correct: "B",
+    options: ["Thor", "Doctor Strange", "Scarlet Witch", "Loki"],
+    correct: "Doctor Strange",
   },
   {
     question: "Who was the first Avenger?",
-    options: [
-      "A: Iron Man",
-      "B: Captain Marvel",
-      "C: Captain America",
-      "D: Ant-Man",
-    ],
-    correct: "C",
+    options: ["Iron Man", "Captain Marvel", "Captain America", "Ant-Man"],
+    correct: "Captain America",
   },
   {
     question: "Which character sacrificed themselves for the Soul Stone?",
-    options: ["A: Black Widow", "B: Hawkeye", "C: Gamora", "D: Iron Man"],
-    correct: "A",
+    options: ["Black Widow", "Hawkeye", "Gamora", "Iron Man"],
+    correct: "Black Widow",
   },
   {
     question: "What is the real name of the superhero Black Widow?",
     options: [
-      "A: Natasha Romanoff",
-      "B: Wanda Maximoff",
-      "C: Carol Danvers",
-      "D: Peggy Carter",
+      "Natasha Romanoff",
+      "Wanda Maximoff",
+      "Carol Danvers",
+      "Peggy Carter",
     ],
-    correct: "A",
+    correct: "Natasha Romanoff",
   },
   {
     question: "Which metal is most commonly found in Wakanda?",
-    options: ["A: Adamantium", "B: Uru", "C: Vibranium", "D: Titanium"],
-    correct: "C",
+    options: ["Adamantium", "Uru", "Vibranium", "Titanium"],
+    correct: "Vibranium",
   },
   {
     question:
       "What is the name of the fictional Eastern European country that was destroyed in 'Avengers: Age of Ultron'?",
-    options: ["A: Latveria", "B: Sokovia", "C: Genosha", "D: Madripoor"],
-    correct: "B",
+    options: ["Latveria", "Sokovia", "Genosha", "Madripoor"],
+    correct: "Sokovia",
   },
   {
     question:
       "Which character's DNA was used to create Wolverine in the comics?",
-    options: ["A: Sabretooth", "B: Deadpool", "C: Omega Red", "D: Hulk"],
-    correct: "A",
+    options: ["Sabretooth", "Deadpool", "Omega Red", "Hulk"],
+    correct: "Sabretooth",
   },
   {
     question: "Who became the Sorcerer Supreme after the Ancient One?",
-    options: ["A: Wong", "B: Doctor Strange", "C: Mordo", "D: Agatha Harkness"],
-    correct: "B",
+    options: ["Wong", "Doctor Strange", "Mordo", "Agatha Harkness"],
+    correct: "Doctor Strange",
   },
   {
     question:
       "Which character in the Marvel Universe wields a shield inscribed with the star of David?",
-    options: ["A: Sabra", "B: Captain Israel", "C: Union Jack", "D: Patriot"],
-    correct: "A",
+    options: ["Sabra", "Captain Israel", "Union Jack", "Patriot"],
+    correct: "Sabra",
   },
 ];

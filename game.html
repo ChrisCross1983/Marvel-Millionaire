@@ -40,29 +40,31 @@
   </head>
   <body>
     <h1 class="heading" id="header-home">
-        <a href="index.html"><i class="fa-solid fa-spider"></i> Marvel Millionaire</a>
+      <a href="index.html"
+        ><i class="fa-solid fa-spider"></i> Marvel Millionaire</a
+      >
     </h1>
     <div class="game-wrapper">
       <div id="game-area">
-        <div id="question-box"><p><b>Question</b></p></div>
+        <div id="question-box"><h3>Question</h3></div>
         <div id="answer-container">
           <div class="answer-box">
             <i class="fa-solid fa-a"></i>
             <input type="radio" id="answer1" name="answers" />
             <label for="answer1"></label>
-            <p class="answer-text">Text of answer A</p>
+            <p class="answer-text" id="answer-a">Text of answer A</p>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-b"></i>
             <input type="radio" id="answer2" name="answers" />
             <label for="answer2"></label>
-            <p class="answer-text">Text of answer B</p>
+            <p class="answer-text" id="answer-b">Text of answer B</p>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-c"></i>
             <input type="radio" id="answer3" name="answers" />
             <label for="answer3"></label>
-            <p class="answer-text">
+            <p class="answer-text" id="answer-c">
               Text of answer C has to be larger to fit the box
             </p>
           </div>
@@ -70,7 +72,7 @@
             <i class="fa-solid fa-d"></i>
             <input type="radio" id="answer4" name="answers" />
             <label for="answer4"></label>
-            <p class="answer-text">Text of answer D</p>
+            <p class="answer-text" id="answer-d">Text of answer D</p>
           </div>
         </div>
         <div class="button-box">
@@ -85,21 +87,21 @@
     </div>
     <div class="extras-wrapper">
       <div id="joker-box">
-        <button class="joker-icon" id="joker1" onclick="useJoker('joker1)">
+        <a class="joker-icon" id="joker1" onclick="useJoker('joker1)">
           <img src="assets/images/thanos.png" alt="Joker 1 - Thanos" />
-        </button>
-        <button class="joker-icon" id="joker2" onclick="useJoker('joker2')">
+        </a>
+        <a class="joker-icon" id="joker2" onclick="useJoker('joker2')">
           <img src="assets/images/spiderman.png" alt="Joker 2 - xy" />
-        </button>
-        <button class="joker-icon" id="joker3" onclick="useJoker('joker3')">
+        </a>
+        <a class="joker-icon" id="joker3" onclick="useJoker('joker3')">
           <img src="assets/images/thor.png" alt="Joker 3 - yz" />
-        </button>
-        <button class="joker-icon" id="joker4" onclick="useJoker('joker4')">
+        </a>
+        <a class="joker-icon" id="joker4" onclick="useJoker('joker4')">
           <img src="assets/images/flash.png" alt="Joker 4 - z" />
-        </button>
+        </a>
       </div>
       <div id="countdown-box">
-        Time: <span id="seconds">60</span> Seconds
+        <p>Time: <span id="seconds">60</span> Seconds</p>
         <img id="time-bar" src="" alt="time bar" />
       </div>
       <div id="score-box">
@@ -108,7 +110,9 @@
         <p>Next Win</p>
       </div>
       <div class="button-box">
-        <button data-type="exit" class="btn btn-red"><i class="fa-regular fa-circle-xmark"></i> Exit Game</button>
+        <button data-type="exit" class="btn btn-red">
+          <i class="fa-regular fa-circle-xmark"></i> Exit Game
+        </button>
         <button data-type="next" class="btn btn-green">
           Next Question <i class="fa-solid fa-arrow-right"></i>
         </button>
@@ -118,14 +122,16 @@
     <!-- DOM Manipulation Area -->
 
     <div id="ready-question" class="ready hidden">
-        <div class="ready-content">
-          <h2>Ready to rumble?</h2>
-          <p>Prepare for your ${numberOfQuestion} question and<br> remember to keep an eye on the countdown!</p>
-          <button id="btn-ready" class="btn btn-green">Yes!</button>
-        </div>
+      <div class="hidden-content">
+        <h2>Ready to rumble?</h2>
+        <p>
+          User information to prepare for game start and which is the current question!
+        </p>
+        <button id="btn-ready" class="btn btn-green">Yes!</button>
       </div>
+    </div>
 
-    <!-- JavaScript File --> 
+    <!-- JavaScript File -->
     <script src="assets/js/script-game.js"></script>
   </body>
 </html>
