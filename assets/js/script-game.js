@@ -119,6 +119,9 @@ if (window.location.pathname.includes("game.html")) {
 }
 
 function showQuestion(index) {
+  const deselect = document.querySelectorAll('input[name="answers"]');
+  deselect.forEach(radio => radio.checked = false);
+
   const questionHeader = document.querySelector("#question-box h3");
   if (index < gameQuestions.length) {
     questionHeader.textContent = gameQuestions[index].question;
@@ -172,6 +175,21 @@ function correctAnswer() {
     alert("Please select an answer before submitting");
   }
 }
+
+/* next question */
+
+document.getElementById("next-question").addEventListener('click', function() {
+    nextAnswer();
+});
+    function nextAnswer() {
+        currentQuestionIndex++;
+
+        if (currentQuestionIndex < gameQuestions.length) {
+            showQuestion(currentQuestionIndex);
+        } else {
+            alert("You've completed the Quiz!")
+        }
+    } 
 
 /* Countdown */
 
