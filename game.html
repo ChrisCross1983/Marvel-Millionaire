@@ -51,32 +51,26 @@
           <div class="answer-box">
             <i class="fa-solid fa-a"></i>
             <input type="radio" id="answer1" name="answers" />
-            <label for="answer1"></label>
-            <p class="answer-text" id="answer-a">Text of answer A</p>
+            <label for="answer1" class="answer-text" id="label1">Text of answer A</label>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-b"></i>
             <input type="radio" id="answer2" name="answers" />
-            <label for="answer2"></label>
-            <p class="answer-text" id="answer-b">Text of answer B</p>
+            <label for="answer2" class="answer-text" id="label2">Text of answer B</label>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-c"></i>
             <input type="radio" id="answer3" name="answers" />
-            <label for="answer3"></label>
-            <p class="answer-text" id="answer-c">
-              Text of answer C has to be larger to fit the box
-            </p>
+            <label for="answer3" class="answer-text" id="label3">Text of answer C</label>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-d"></i>
             <input type="radio" id="answer4" name="answers" />
-            <label for="answer4"></label>
-            <p class="answer-text" id="answer-d">Text of answer D</p>
+            <label for="answer4" class="answer-text" id="label4">Text of answer D</label>
           </div>
         </div>
         <div class="button-box">
-          <button data-type="submit" class="btn btn-green">
+          <button id="submit-btn" data-type="submit" class="btn btn-green">
             Submit Answer
           </button>
           <button data-type="take_money" class="btn btn-gold">
@@ -101,8 +95,7 @@
         </a>
       </div>
       <div id="countdown-box">
-        <p>Time: <span id="seconds">60</span> Seconds</p>
-        <img id="time-bar" src="" alt="time bar" />
+        <p id="timer">Remaining Time: <span id="seconds">60</span> Seconds</p>
       </div>
       <div id="score-box">
         <img id="score-bar" src="" alt="score bar" />

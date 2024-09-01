@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-/* div,
-p {
-  border: 1px solid black;
-} */
-
 /* Main Styling */
 
 body {
@@ -250,7 +245,7 @@ a:visited {
 }
 
 .joker-icon img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /* Score Styling */
@@ -266,6 +261,20 @@ a:visited {
   justify-content: center;
   gap: 20px;
 }
+
+#timer {
+    border: 1px solid white;
+    border-radius: 25px;
+    background-color: black;
+    margin: 0;
+    min-width: min-content;
+    padding: 10px;
+}
+
+#countdown-box,
+  #score-box {
+    margin: 0 auto;
+  }
 
 /* Javascript Styling */
 
@@ -395,11 +404,6 @@ a:visited {
     font-size: 17px;
     min-width: 100px;
   }
-
-  #countdown-box,
-  #score-box {
-    padding: 10px;
-  }
 }
 
 /* Media Queries for larg Smartphone screens */
@@ -437,11 +441,6 @@ a:visited {
   .button-box {
     gap: 60px;
     padding: 10px 0;
-  }
-
-  #countdown-box,
-  #score-box {
-    padding: 10px;
   }
 
   .img_text {
@@ -484,18 +483,13 @@ a:visited {
 
   #joker-box {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     margin: 0;
   }
 
   .joker-icon img {
     width: 50px;
     height: 50px;
-  }
-
-  #countdown-box,
-  #score-box {
-    padding: 10px;
   }
 
   .img_text {

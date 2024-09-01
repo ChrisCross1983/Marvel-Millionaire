@@ -1,78 +1,3 @@
-/* Question functionality */
-
-let currentQuestionIndex = 0;
-
-function showReadyQuestion() {
-  const ready = document.getElementById("ready-question");
-  const readyText = document.querySelector("#ready-question p");
-
-  readyText.innerHTML = `Prepare for your ${
-    currentQuestionIndex + 1
-  } question and<br /> remember to keep an eye on the countdown!`;
-  ready.classList.remove("hidden");
-}
-
-function closeReadyQuestion() {
-  const ready = document.getElementById("ready-question");
-  ready.classList.add("hidden");
-}
-
-if (window.location.pathname.includes("game.html")) {
-  window.addEventListener("DOMContentLoaded", function () {
-    showReadyQuestion();
-
-    document.getElementById("btn-ready").addEventListener("click", function () {
-      closeReadyQuestion();
-      showQuestion(0);
-    });
-  });
-}
-
-function showQuestion(index) {
-  const questionHeader = document.querySelector("#question-box h3");
-  if (index < gameQuestions.length) {
-    questionHeader.textContent = gameQuestions[index].question;
-    showAnswers(index);
-  } else {
-    alert("No more Questions!");
-  }
-}
-
-/* Answer functionality */
-
-function showAnswers(index) {
-  const answerA = document.getElementById("answer-a");
-  const answerB = document.getElementById("answer-b");
-  const answerC = document.getElementById("answer-c");
-  const answerD = document.getElementById("answer-d");
-
-  if (index < gameQuestions.length) {
-    answerA.textContent = gameQuestions[index].options[0];
-    answerB.textContent = gameQuestions[index].options[1];
-    answerC.textContent = gameQuestions[index].options[2];
-    answerD.textContent = gameQuestions[index].options[3];
-
-    remainingTime();
-  } else {
-    console.log("Invalid question index.");
-  }
-}
-
-/* Countdown */
-
-function remainingTime() {
-    let countdown = 60;
-    let timer = setInterval(function() {
-        countdown--;
-        console.log(countdown);
-        if (countdown === 0) {
-            clearInterval(timer);
-            console.log("Countdown finished");
-        }
-    },1000);
-}
-
-
 /* Questions and Answers array */
 
 const gameQuestions = [
@@ -162,3 +87,105 @@ const gameQuestions = [
     correct: "Sabra",
   },
 ];
+
+/* Question functionality */
+
+let currentQuestionIndex = 0;
+
+function showReadyQuestion() {
+  const ready = document.getElementById("ready-question");
+  const readyText = document.querySelector("#ready-question p");
+
+  readyText.innerHTML = `Prepare for your ${
+    currentQuestionIndex + 1
+  } question and<br /> remember to keep an eye on the countdown!`;
+  ready.classList.remove("hidden");
+}
+
+function closeReadyQuestion() {
+  const ready = document.getElementById("ready-question");
+  ready.classList.add("hidden");
+}
+
+if (window.location.pathname.includes("game.html")) {
+  window.addEventListener("DOMContentLoaded", function () {
+    showReadyQuestion();
+
+    document.getElementById("btn-ready").addEventListener("click", function () {
+      closeReadyQuestion();
+      showQuestion(0);
+    });
+  });
+}
+
+function showQuestion(index) {
+  const questionHeader = document.querySelector("#question-box h3");
+  if (index < gameQuestions.length) {
+    questionHeader.textContent = gameQuestions[index].question;
+    showAnswers(index);
+  } else {
+    alert("No more Questions!");
+  }
+}
+
+/* Answer functionality */
+
+/* show answer */
+
+function showAnswers(index) {
+    const answerLabels = [
+        document.getElementById("label1"),
+        document.getElementById("label2"),
+        document.getElementById("label3"),
+        document.getElementById("label4")
+    ];
+
+  if (index < gameQuestions.length) {
+    for (let i = 0; i < answerLabels.length; i++) {
+        answerLabels[i].textContent = gameQuestions[index].options[i];
+    }
+    remainingTime();
+  } else {
+    console.log("Invalid question index.");
+  }
+}
+
+/* check correct answer */
+
+document.getElementById("submit-btn").addEventListener("click", function () {
+  correctAnswer();
+});
+
+function correctAnswer() {
+  const selectedOption = document.querySelector('input[name="answers"]:checked');
+
+  if (selectedOption) {
+    const selectedAnswer = document.querySelector(`label[for="${selectedOption.id}"]`).textContent.trim();
+    const correct = gameQuestions[currentQuestionIndex].correct;
+
+    if (selectedAnswer === correct) {
+      alert("You're right buddy!");
+    } else {
+      alert("Sorry, you're wrong!");
+    }
+  } else {
+    alert("Please select an answer before submitting");
+  }
+}
+
+/* Countdown */
+
+function remainingTime() {
+  let countdown = 60;
+  const countdownDisplay = document.getElementById("seconds");
+
+  let timer = setInterval(function () {
+    countdown--;
+    countdownDisplay.textContent = countdown;
+
+    if (countdown === 0) {
+      clearInterval(timer);
+      console.log("Countdown finished");
+    }
+  }, 1000);
+}
