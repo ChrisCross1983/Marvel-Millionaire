@@ -151,25 +151,11 @@ function showQuestion(index) {
 
   const questionHeader = document.querySelector("#question-box h3");
   if (index < gameQuestions.length) {
+    disableButton();
     questionHeader.textContent = gameQuestions[index].question;
     showAnswers(index);
   } else {
     alert("No more Questions!");
-  }
-}
-
-/* next question */
-
-document.getElementById("next-question").addEventListener("click", function () {
-  nextAnswer();
-});
-function nextAnswer() {
-  currentQuestionIndex++;
-
-  if (currentQuestionIndex < gameQuestions.length) {
-    showQuestion(currentQuestionIndex);
-  } else {
-    alert("You've completed the Quiz!");
   }
 }
 
@@ -220,9 +206,38 @@ function correctAnswer() {
       alert("Sorry, you're wrong!");
     }
     stopCountdown();
+    enableButton();
   } else {
     alert("Please select an answer before submitting");
   }
+}
+
+/* next question & answer */
+
+document.getElementById("next-question").addEventListener("click", function () {
+    nextAnswer()
+});
+
+function nextAnswer() {
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < gameQuestions.length) {
+    showQuestion(currentQuestionIndex);
+  } else {
+    alert("You've completed the Quiz!");
+  }
+}
+
+/* Enable & Disable next question button */
+
+document.getElementById("next-question").disabled = true;
+
+function enableButton() {
+  document.getElementById("next-question").disabled = false;
+}
+
+function disableButton() {
+  document.getElementById("next-question").disabled = true;
 }
 
 /* Countdown */

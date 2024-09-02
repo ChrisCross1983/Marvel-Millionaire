@@ -78,6 +78,13 @@ button:hover {
   gap: 30px;
 }
 
+:disabled {
+    background-color: grey;
+    opacity: 0.8;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /* Homepage Styling */
 
 a,
@@ -274,6 +281,10 @@ a:visited {
     margin: 0;
     min-width: min-content;
     padding: 10px;
+}
+
+#timer span {
+    color: red;
 }
 
 #countdown-box,
