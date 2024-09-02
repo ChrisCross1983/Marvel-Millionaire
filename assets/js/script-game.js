@@ -111,6 +111,7 @@ const scoreMoney = [
 /* Global timer */
 
 let timer;
+let countdown = 120;
 
 /* Question functionality */
 
@@ -179,7 +180,7 @@ function showAnswers(index) {
     for (let i = 0; i < answerLabels.length; i++) {
       answerLabels[i].textContent = gameQuestions[index].options[i];
     }
-    remainingTime();
+    startNewCountdown();
   } else {
     console.log("Invalid question index.");
   }
@@ -212,7 +213,7 @@ function correctAnswer() {
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
       resetGame();
     }
-    stopCountdown();
+    pauseCountdown();
     document.getElementById("submit-btn").disabled = true;
   } else {
     alert("Please select an answer before submitting");
@@ -231,6 +232,7 @@ function nextAnswer() {
 
   if (currentQuestionIndex < gameQuestions.length) {
     showQuestion(currentQuestionIndex);
+    startNewCountdown();
   } else {
     alert("You've completed the Quiz!");
   }
@@ -255,7 +257,6 @@ function disableButton() {
 /* Countdown */
 
 function remainingTime() {
-  let countdown = 60;
   const countdownDisplay = document.getElementById("seconds");
 
   timer = setInterval(function () {
@@ -269,10 +270,24 @@ function remainingTime() {
   }, 1000);
 }
 
-/* Stop countdown */
+/* Pause countdown */
 
-function stopCountdown() {
+function pauseCountdown() {
   clearInterval(timer);
+}
+
+/* Resume countdown */
+
+function resumeCountdown() {
+    remainingTime();
+}
+
+/* Start new countdown */
+
+function startNewCountdown() {
+    clearInterval(timer);
+    countdown = 120;
+    remainingTime();
 }
 
 /* Score system */
@@ -298,18 +313,34 @@ function resetGame() {
   currentScoreIndex = 0;
   document.getElementById("submit-btn").disabled = false;
   document.getElementById("next-question").disabled = true;
-  stopCountdown();
+  pauseCountdown();
   showScore();
   showReadyQuestion();
 }
 
 /* Exit Game */
 
- document.getElementById("exit-btn").addEventListener('click', function() {
-    exitGame();
- });
+document.getElementById("exit-btn").addEventListener("click", function () {
+  exitGame();
+});
 
- function exitGame() {
-    const exit = document.getElementById("exit-select");
-    exit.classList.remove("hidden");
+function exitGame() {
+  const exit = document.getElementById("exit-select");
+  exit.classList.remove("hidden");
+  pauseCountdown();
 }
+
+function closeExitGame() {
+    const closeExit = document.getElementById("exit-select");
+    closeExit.classList.add("hidden")
+}
+
+document.getElementById("quit").addEventListener('click', function() {
+    closeExitGame();
+    window.location.href = "index.html";
+});
+
+document.getElementById("stay").addEventListener('click', function() {
+    closeExitGame();
+    resumeCountdown();
+});
