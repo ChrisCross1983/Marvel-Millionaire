@@ -91,10 +91,28 @@ const gameQuestions = [
 /* Score array */
 
 const scoreMoney = [
-    "0K", "0.5K", "1K", "2K", "4K", "8K", "16K", "32K", "64K", "128K", "250K", "500K", "1M" 
+  "0K",
+  "0.5K",
+  "1K",
+  "2K",
+  "4K",
+  "8K",
+  "16K",
+  "32K",
+  "64K",
+  "128K",
+  "250K",
+  "500K",
+  "1M",
 ];
 
+/* Global timer */
+
+let timer;
+
 /* Question functionality */
+
+/* Ask initial question if player is ready */
 
 let currentQuestionIndex = 0;
 
@@ -124,10 +142,12 @@ if (window.location.pathname.includes("game.html")) {
   });
 }
 
+/* Show Question */
+
 function showQuestion(index) {
-    /* Deselect Radio Button */
+  /* Deselect Radio Button */
   const deselect = document.querySelectorAll('input[name="answers"]');
-  deselect.forEach(radio => radio.checked = false);
+  deselect.forEach((radio) => (radio.checked = false));
 
   const questionHeader = document.querySelector("#question-box h3");
   if (index < gameQuestions.length) {
@@ -138,21 +158,36 @@ function showQuestion(index) {
   }
 }
 
+/* next question */
+
+document.getElementById("next-question").addEventListener("click", function () {
+  nextAnswer();
+});
+function nextAnswer() {
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < gameQuestions.length) {
+    showQuestion(currentQuestionIndex);
+  } else {
+    alert("You've completed the Quiz!");
+  }
+}
+
 /* Answer functionality */
 
 /* show answer */
 
 function showAnswers(index) {
-    const answerLabels = [
-        document.getElementById("label1"),
-        document.getElementById("label2"),
-        document.getElementById("label3"),
-        document.getElementById("label4")
-    ];
+  const answerLabels = [
+    document.getElementById("label1"),
+    document.getElementById("label2"),
+    document.getElementById("label3"),
+    document.getElementById("label4"),
+  ];
 
   if (index < gameQuestions.length) {
     for (let i = 0; i < answerLabels.length; i++) {
-        answerLabels[i].textContent = gameQuestions[index].options[i];
+      answerLabels[i].textContent = gameQuestions[index].options[i];
     }
     remainingTime();
   } else {
@@ -167,10 +202,14 @@ document.getElementById("submit-btn").addEventListener("click", function () {
 });
 
 function correctAnswer() {
-  const selectedOption = document.querySelector('input[name="answers"]:checked');
+  const selectedOption = document.querySelector(
+    'input[name="answers"]:checked'
+  );
 
   if (selectedOption) {
-    const selectedAnswer = document.querySelector(`label[for="${selectedOption.id}"]`).textContent.trim();
+    const selectedAnswer = document
+      .querySelector(`label[for="${selectedOption.id}"]`)
+      .textContent.trim();
     const correct = gameQuestions[currentQuestionIndex].correct;
 
     if (selectedAnswer === correct) {
@@ -180,25 +219,11 @@ function correctAnswer() {
     } else {
       alert("Sorry, you're wrong!");
     }
+    stopCountdown();
   } else {
     alert("Please select an answer before submitting");
   }
 }
-
-/* next question */
-
-document.getElementById("next-question").addEventListener('click', function() {
-    nextAnswer();
-});
-    function nextAnswer() {
-        currentQuestionIndex++;
-
-        if (currentQuestionIndex < gameQuestions.length) {
-            showQuestion(currentQuestionIndex);
-        } else {
-            alert("You've completed the Quiz!")
-        }
-    } 
 
 /* Countdown */
 
@@ -206,7 +231,7 @@ function remainingTime() {
   let countdown = 60;
   const countdownDisplay = document.getElementById("seconds");
 
-  let timer = setInterval(function () {
+  timer = setInterval(function () {
     countdown--;
     countdownDisplay.textContent = countdown;
 
@@ -217,21 +242,26 @@ function remainingTime() {
   }, 1000);
 }
 
+/* Stop countdown */
+
+function stopCountdown() {
+  clearInterval(timer);
+}
+
 /* Score system */
 
 let currentScoreIndex = 0;
 
 function increaseScore() {
- if (currentScoreIndex < scoreMoney.length - 1) {
+  if (currentScoreIndex < scoreMoney.length - 1) {
     currentScoreIndex++;
- }
+  }
 }
 
 function showScore() {
-    const currentScore = document.getElementById("current-score")
-    const nextScore = document.getElementById("next-score");
+  const currentScore = document.getElementById("current-score");
+  const nextScore = document.getElementById("next-score");
 
-    currentScore.innerHTML = scoreMoney[currentScoreIndex];
-    nextScore.innerHTML = scoreMoney[currentScoreIndex + 1] || "1M"
-    };
-
+  currentScore.innerHTML = scoreMoney[currentScoreIndex];
+  nextScore.innerHTML = scoreMoney[currentScoreIndex + 1] || "1M";
+}
