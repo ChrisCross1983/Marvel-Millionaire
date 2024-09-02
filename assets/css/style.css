@@ -30,7 +30,7 @@ p {
 }
 
 h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .heading {
@@ -68,7 +68,7 @@ button:hover {
 }
 
 .btn-blue {
-    background-color: blue;
+  background-color: blue;
 }
 
 .button-box {
@@ -79,10 +79,10 @@ button:hover {
 }
 
 :disabled {
-    background-color: grey;
-    opacity: 0.8;
-    cursor: not-allowed;
-    pointer-events: none;
+  background-color: grey;
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Homepage Styling */
@@ -275,22 +275,22 @@ a:visited {
 }
 
 #timer {
-    border: 1px solid white;
-    border-radius: 25px;
-    background-color: black;
-    margin: 0;
-    min-width: min-content;
-    padding: 10px;
+  border: 1px solid white;
+  border-radius: 25px;
+  background-color: black;
+  margin: 0;
+  min-width: min-content;
+  padding: 10px;
 }
 
 #timer span {
-    color: red;
+  color: red;
 }
 
 #countdown-box,
-  #score-box {
-    margin: 0 auto;
-  }
+#score-box {
+  margin: 0 auto;
+}
 
 /* Javascript Styling */
 
@@ -339,23 +339,23 @@ a:visited {
 /* Pulsating button */
 
 @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
 
-  .animate-button {
-    animation: pulse 1s infinite;
-  }
+.animate-button {
+  animation: pulse 1s infinite;
+}
 
 /* Media Queries for larger screens */
 

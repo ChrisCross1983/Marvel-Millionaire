@@ -116,13 +116,15 @@
         <p id="next-score">Next Win</p>
       </div>
       <div class="button-box">
-        <button data-type="exit" class="btn btn-red">
+        <button data-type="exit" class="btn btn-red" id="exit-btn">
           <i class="fa-regular fa-circle-xmark"></i> Exit Game
         </button>
       </div>
     </div>
 
     <!-- DOM Manipulation Area -->
+
+    <!-- Initial game start question -->
 
     <div id="ready-question" class="ready hidden">
       <div class="hidden-content">
@@ -134,6 +136,15 @@
         <button id="btn-ready" class="btn btn-green">Yes!</button>
       </div>
     </div>
+
+    <!-- Exit Button -->
+    <div id="exit-select" class="modus hidden">
+        <div class="hidden-content">
+          <h2>Are you sure that you want to quit?</h2>
+          <button id="quit" class="btn btn-green">Yes</button>
+          <button id="stay" class="btn btn-red">No</button>
+        </div>
+      </div>
 
     <!-- JavaScript File -->
     <script src="assets/js/script-game.js"></script>

@@ -247,7 +247,7 @@ function enableButton() {
 }
 
 function disableButton() {
-    const nextQuestionButton = document.getElementById("next-question");
+  const nextQuestionButton = document.getElementById("next-question");
   nextQuestionButton.disabled = true;
   nextQuestionButton.classList.remove("animate-button");
 }
@@ -301,4 +301,15 @@ function resetGame() {
   stopCountdown();
   showScore();
   showReadyQuestion();
+}
+
+/* Exit Game */
+
+ document.getElementById("exit-btn").addEventListener('click', function() {
+    exitGame();
+ });
+
+ function exitGame() {
+    const exit = document.getElementById("exit-select");
+    exit.classList.remove("hidden");
 }
