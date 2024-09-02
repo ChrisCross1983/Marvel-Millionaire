@@ -118,6 +118,7 @@ Example:
    - How to load another page with JS - https://www.w3schools.com/jsref/event_onload.asp
    - How to use session storage - https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
    - How to set and delete timer - https://www.w3schools.com/jsref/met_win_setinterval.asp
+   - How to create an pulsating button - https://stackoverflow.com/questions/22163163/how-to-do-a-dynamic-pulsating-button-in-javascript
 
   ### Media
    - Hero Background - wallpapers.com

@@ -92,6 +92,8 @@ const gameQuestions = [
 
 const scoreMoney = [
   "0K",
+  "0.1k",
+  "0.2k",
   "0.5K",
   "1K",
   "2K",
@@ -137,6 +139,7 @@ if (window.location.pathname.includes("game.html")) {
 
     document.getElementById("btn-ready").addEventListener("click", function () {
       closeReadyQuestion();
+      showScore(0);
       showQuestion(0);
     });
   });
@@ -207,6 +210,7 @@ function correctAnswer() {
     } else {
       const currentScore = scoreMoney[currentQuestionIndex];
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
+      resetGame();
     }
     stopCountdown();
     document.getElementById("submit-btn").disabled = true;
@@ -218,6 +222,7 @@ function correctAnswer() {
 /* next question & answer */
 
 document.getElementById("next-question").addEventListener("click", function () {
+  this.classList.remove("animate-button");
   nextAnswer();
 });
 
@@ -236,11 +241,15 @@ function nextAnswer() {
 document.getElementById("next-question").disabled = true;
 
 function enableButton() {
-  document.getElementById("next-question").disabled = false;
+  const nextQuestionButton = document.getElementById("next-question");
+  nextQuestionButton.disabled = false;
+  nextQuestionButton.classList.add("animate-button");
 }
 
 function disableButton() {
-  document.getElementById("next-question").disabled = true;
+    const nextQuestionButton = document.getElementById("next-question");
+  nextQuestionButton.disabled = true;
+  nextQuestionButton.classList.remove("animate-button");
 }
 
 /* Countdown */
@@ -282,4 +291,14 @@ function showScore() {
 
   currentScore.innerHTML = scoreMoney[currentScoreIndex];
   nextScore.innerHTML = scoreMoney[currentScoreIndex + 1] || "1M";
+}
+
+function resetGame() {
+  currentQuestionIndex = 0;
+  currentScoreIndex = 0;
+  document.getElementById("submit-btn").disabled = false;
+  document.getElementById("next-question").disabled = true;
+  stopCountdown();
+  showScore();
+  showReadyQuestion();
 }
