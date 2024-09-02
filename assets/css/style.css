@@ -406,10 +406,6 @@ a:visited {
     top: 100px;
   }
 
-  body {
-    height: 150vh;
-  }
-
   .button-box {
     gap: 60px;
     padding: 10px 0;
@@ -425,10 +421,6 @@ a:visited {
 /* Media Queries for larg Smartphone screens */
 
 @media (max-width: 620px) {
-  body {
-    height: 140vh;
-  }
-
   #play,
   #rules {
     max-width: 90%;

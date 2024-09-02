@@ -145,6 +145,7 @@ if (window.location.pathname.includes("game.html")) {
 /* Show Question */
 
 function showQuestion(index) {
+  document.getElementById("submit-btn").disabled = false;
   /* Deselect Radio Button */
   const deselect = document.querySelectorAll('input[name="answers"]');
   deselect.forEach((radio) => (radio.checked = false));
@@ -202,11 +203,13 @@ function correctAnswer() {
       alert("You're right buddy!");
       increaseScore();
       showScore();
+      enableButton();
     } else {
-      alert("Sorry, you're wrong!");
+      const currentScore = scoreMoney[currentQuestionIndex];
+      alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
     }
     stopCountdown();
-    enableButton();
+    document.getElementById("submit-btn").disabled = true;
   } else {
     alert("Please select an answer before submitting");
   }
@@ -215,7 +218,7 @@ function correctAnswer() {
 /* next question & answer */
 
 document.getElementById("next-question").addEventListener("click", function () {
-    nextAnswer()
+  nextAnswer();
 });
 
 function nextAnswer() {
