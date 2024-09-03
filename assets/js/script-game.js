@@ -336,6 +336,14 @@ function correctAnswer() {
       .textContent.trim();
     const correct = questions[currentQuestionIndex].correct;
 
+/* disable radio buttons after answer is selected */
+    const answerOptions = document.querySelectorAll('input[name="answers"]');
+    answerOptions.forEach((option) => {
+      option.disabled = true;
+    });
+/* Visual effect for selected answer */
+    document.querySelector(`label[for="${selectedOption.id}"]`).classList.add('selected-answer');
+
     if (selectedAnswer === correct) {
       alert("You're right buddy!");
       increaseScore();
@@ -380,6 +388,7 @@ function nextAnswer() {
     let answerLabels = document.querySelectorAll(".answer-text");
     answerLabels.forEach((label) => {
       label.style.opacity = 1;
+      label.classList.remove('selected-answer');
     });
   } else {
     alert("You've completed the Quiz!");
