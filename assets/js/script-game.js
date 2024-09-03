@@ -1,92 +1,190 @@
 /* Questions and Answers array */
 
-const gameQuestions = [
-  {
-    question: "What is the name of Thor's hammer?",
-    options: ["Mjolnir", "Stormbreaker", "Aegis", "Gungnir"],
-    correct: "Mjolnir",
-  },
-  {
-    question: "What is Tony Stark's superhero name?",
-    options: ["Iron Fist", "Iron Man", "War Machine", "Hulk"],
-    correct: "Iron Man",
-  },
-  {
-    question:
-      "What material is Captain America's shield made of in the comics?",
-    options: ["Shield of Valor", "Aegis", "Vibranium", "Golden Shield"],
-    correct: "Vibranium",
-  },
-  {
-    question: "Who is the King of Wakanda?",
-    options: ["Black Panther", "Thor", "Spider-Man", "Doctor Strange"],
-    correct: "Black Panther",
-  },
-  {
-    question: "What is the name of Tony Stark's AI assistant before JARVIS?",
-    options: ["HOMER", "FRIDAY", "DUM-E", "P.E.P.P.E.R."],
-    correct: "FRIDAY",
-  },
-  {
-    question: "Which Infinity Stone has the power to manipulate time?",
-    options: ["Mind Stone", "Soul Stone", "Power Stone", "Time Stone"],
-    correct: "Time Stone",
-  },
-  {
-    question:
-      "Which superhero is also known as the 'Master of the Mystic Arts'?",
-    options: ["Thor", "Doctor Strange", "Scarlet Witch", "Loki"],
-    correct: "Doctor Strange",
-  },
-  {
-    question: "Who was the first Avenger?",
-    options: ["Iron Man", "Captain Marvel", "Captain America", "Ant-Man"],
-    correct: "Captain America",
-  },
-  {
-    question: "Which character sacrificed themselves for the Soul Stone?",
-    options: ["Black Widow", "Hawkeye", "Gamora", "Iron Man"],
-    correct: "Black Widow",
-  },
-  {
-    question: "What is the real name of the superhero Black Widow?",
-    options: [
-      "Natasha Romanoff",
-      "Wanda Maximoff",
-      "Carol Danvers",
-      "Peggy Carter",
-    ],
-    correct: "Natasha Romanoff",
-  },
-  {
-    question: "Which metal is most commonly found in Wakanda?",
-    options: ["Adamantium", "Uru", "Vibranium", "Titanium"],
-    correct: "Vibranium",
-  },
-  {
-    question:
-      "What is the name of the fictional Eastern European country that was destroyed in 'Avengers: Age of Ultron'?",
-    options: ["Latveria", "Sokovia", "Genosha", "Madripoor"],
-    correct: "Sokovia",
-  },
-  {
-    question:
-      "Which character's DNA was used to create Wolverine in the comics?",
-    options: ["Sabretooth", "Deadpool", "Omega Red", "Hulk"],
-    correct: "Sabretooth",
-  },
-  {
-    question: "Who became the Sorcerer Supreme after the Ancient One?",
-    options: ["Wong", "Doctor Strange", "Mordo", "Agatha Harkness"],
-    correct: "Doctor Strange",
-  },
-  {
-    question:
-      "Which character in the Marvel Universe wields a shield inscribed with the star of David?",
-    options: ["Sabra", "Captain Israel", "Union Jack", "Patriot"],
-    correct: "Sabra",
-  },
-];
+const normalQuestions = [
+    {
+      question: "What is the name of Thor's hammer?",
+      options: ["Mjolnir", "Stormbreaker", "Aegis", "Gungnir"],
+      correct: "Mjolnir",
+      hint: "This weapon's name sounds like a thunderous strike.",
+    },
+    {
+      question: "What is Tony Stark's superhero name?",
+      options: ["Iron Fist", "Iron Man", "War Machine", "Hulk"],
+      correct: "Iron Man",
+      hint: "This hero's name reflects his metal suit.",
+    },
+    {
+      question: "What material is Captain America's shield made of in the comics?",
+      options: ["Shield of Valor", "Aegis", "Vibranium", "Golden Shield"],
+      correct: "Vibranium",
+      hint: "It's a rare and almost indestructible metal from Wakanda.",
+    },
+    {
+      question: "Who is the King of Wakanda?",
+      options: ["Black Panther", "Thor", "Spider-Man", "Doctor Strange"],
+      correct: "Black Panther",
+      hint: "This character shares his name with a stealthy feline.",
+    },
+    {
+      question: "What is the name of Tony Stark's AI assistant before JARVIS?",
+      options: ["HOMER", "FRIDAY", "DUM-E", "P.E.P.P.E.R."],
+      correct: "FRIDAY",
+      hint: "This assistant is named after a day in the week, often associated with the end of the workweek.",
+    },
+    {
+      question: "Which Infinity Stone has the power to manipulate time?",
+      options: ["Mind Stone", "Soul Stone", "Power Stone", "Time Stone"],
+      correct: "Time Stone",
+      hint: "Its power is related to an element that is always moving forward.",
+    },
+    {
+      question: "Which superhero is also known as the 'Master of the Mystic Arts'?",
+      options: ["Thor", "Doctor Strange", "Scarlet Witch", "Loki"],
+      correct: "Doctor Strange",
+      hint: "He is a former surgeon who turned to magic after an accident.",
+    },
+    {
+      question: "Who was the first Avenger?",
+      options: ["Iron Man", "Captain Marvel", "Captain America", "Ant-Man"],
+      correct: "Captain America",
+      hint: "He fought in World War II and is known as a symbol of hope.",
+    },
+    {
+      question: "Which character sacrificed themselves for the Soul Stone?",
+      options: ["Black Widow", "Hawkeye", "Gamora", "Iron Man"],
+      correct: "Black Widow",
+      hint: "A highly skilled spy with a complicated past.",
+    },
+    {
+      question: "What is the real name of the superhero Black Widow?",
+      options: ["Natasha Romanoff", "Wanda Maximoff", "Carol Danvers", "Peggy Carter"],
+      correct: "Natasha Romanoff",
+      hint: "She has a Russian background and was trained in the Red Room.",
+    },
+    {
+      question: "Which metal is most commonly found in Wakanda?",
+      options: ["Adamantium", "Uru", "Vibranium", "Titanium"],
+      correct: "Vibranium",
+      hint: "This metal is known for its ability to absorb vibrations.",
+    },
+    {
+      question: "What is the name of the fictional Eastern European country destroyed in 'Avengers: Age of Ultron'?",
+      options: ["Latveria", "Sokovia", "Genosha", "Madripoor"],
+      correct: "Sokovia",
+      hint: "This country was the site of a major battle involving Ultron.",
+    },
+    {
+      question: "Which character's DNA was used to create Wolverine in the comics?",
+      options: ["Sabretooth", "Deadpool", "Omega Red", "Hulk"],
+      correct: "Sabretooth",
+      hint: "This character shares a feral connection with Wolverine.",
+    },
+    {
+      question: "Who became the Sorcerer Supreme after the Ancient One?",
+      options: ["Wong", "Doctor Strange", "Mordo", "Agatha Harkness"],
+      correct: "Doctor Strange",
+      hint: "He has a photographic memory and studied under the Ancient One.",
+    },
+    {
+      question: "Which character in the Marvel Universe wields a shield inscribed with the star of David?",
+      options: ["Sabra", "Captain Israel", "Union Jack", "Patriot"],
+      correct: "Sabra",
+      hint: "This hero is a mutant from Israel.",
+    },
+  ];  
+
+  const hardQuestions = [
+    {
+      question: "In which year was the first Iron Man movie released?",
+      options: ["2005", "2008", "2010", "2012"],
+      correct: "2008",
+      hint: "This year marked the beginning of the Marvel Cinematic Universe.",
+    },
+    {
+      question: "What is the real name of the superhero known as the Scarlet Witch?",
+      options: ["Wanda Maximoff", "Jean Grey", "Emma Frost", "Natasha Romanoff"],
+      correct: "Wanda Maximoff",
+      hint: "She is a powerful sorceress and the sister of Quicksilver.",
+    },
+    {
+      question: "Which character is often referred to as the 'Merc with a Mouth'?",
+      options: ["Deadpool", "Wolverine", "Gambit", "Spider-Man"],
+      correct: "Deadpool",
+      hint: "This antihero is known for his humor and ability to break the fourth wall.",
+    },
+    {
+      question: "Who was the scientist that transformed himself into the Hulk?",
+      options: ["Bruce Wayne", "Bruce Banner", "Tony Stark", "Peter Parker"],
+      correct: "Bruce Banner",
+      hint: "His transformation was a result of exposure to gamma radiation.",
+    },
+    {
+      question: "Which comic book series introduced the character Thanos?",
+      options: ["Iron Man", "The Invincible Iron Man", "The Incredible Hulk", "The Invincible Thor"],
+      correct: "The Invincible Iron Man",
+      hint: "Thanos' first appearance was in a comic involving a metal-clad superhero.",
+    },
+    {
+      question: "What is the name of Thor's father in Norse mythology?",
+      options: ["Loki", "Odin", "Baldur", "Freyr"],
+      correct: "Odin",
+      hint: "He is often depicted as an elderly, wise god with one eye.",
+    },
+    {
+      question: "Which villain is known as the 'Mad Titan'?",
+      options: ["Ultron", "Loki", "Thanos", "Hela"],
+      correct: "Thanos",
+      hint: "He is obsessed with balancing the universe using the Infinity Stones.",
+    },
+    {
+      question: "What was the name of the Nazi organization led by Red Skull?",
+      options: ["Hydra", "SHIELD", "The Hand", "AIM"],
+      correct: "Hydra",
+      hint: "Their motto is 'Cut off one head, two more shall take its place.'",
+    },
+    {
+      question: "Which material is Thor's new weapon, Stormbreaker, made from?",
+      options: ["Uru", "Vibranium", "Adamantium", "Steel"],
+      correct: "Uru",
+      hint: "This metal is of Asgardian origin, used by dwarves in Nidavellir.",
+    },
+    {
+      question: "What is the name of the alternate dimension that Doctor Strange primarily draws power from?",
+      options: ["Dark Dimension", "Mirror Dimension", "Quantum Realm", "Astral Plane"],
+      correct: "Dark Dimension",
+      hint: "This dimension is ruled by Dormammu.",
+    },
+    {
+      question: "Who is the guardian of the Soul Stone in the MCU?",
+      options: ["Red Skull", "Loki", "Odin", "Gamora"],
+      correct: "Red Skull",
+      hint: "He was once a Nazi scientist before being transported to a distant planet.",
+    },
+    {
+      question: "Which Avenger is known as the 'Man out of Time'?",
+      options: ["Iron Man", "Captain America", "Black Panther", "Hawkeye"],
+      correct: "Captain America",
+      hint: "He was frozen for decades before being revived in the modern era.",
+    },
+    {
+      question: "Who is the current Sorcerer Supreme in the MCU?",
+      options: ["The Ancient One", "Doctor Strange", "Mordo", "Wong"],
+      correct: "Doctor Strange",
+      hint: "He was trained in Kamar-Taj and uses the Eye of Agamotto.",
+    },
+    {
+      question: "Which Marvel character is a founding member of the X-Men?",
+      options: ["Wolverine", "Cyclops", "Deadpool", "Scarlet Witch"],
+      correct: "Cyclops",
+      hint: "He leads the X-Men and can emit powerful optic blasts.",
+    },
+    {
+      question: "Which Marvel villain is a master of magnetism?",
+      options: ["Magneto", "Doctor Doom", "Green Goblin", "Kingpin"],
+      correct: "Magneto",
+      hint: "He can control metal and is a major adversary of the X-Men.",
+    },
+  ];  
 
 /* Score array */
 
@@ -108,13 +206,23 @@ const scoreMoney = [
   "1M",
 ];
 
-/* Global timer */
+/* Global variables timer and game questions */
 
+let questions = [];
 let timer;
 let countdown = 120;
 
-/* Question functionality */
+/* Loading game questions */
 
+const gameMode = sessionStorage.getItem("gameMode");
+
+    if (gameMode === "hard") {
+        questions = hardQuestions;
+    } else {
+        questions = normalQuestions;
+}
+
+/* Question functionality */
 /* Ask initial question if player is ready */
 
 let currentQuestionIndex = 0;
@@ -155,9 +263,9 @@ function showQuestion(index) {
   deselect.forEach((radio) => (radio.checked = false));
 
   const questionHeader = document.querySelector("#question-box h3");
-  if (index < gameQuestions.length) {
+  if (index < questions.length) {
     disableButton();
-    questionHeader.textContent = gameQuestions[index].question;
+    questionHeader.textContent = questions[index].question;
     showAnswers(index);
   } else {
     alert("No more Questions!");
@@ -176,9 +284,9 @@ function showAnswers(index) {
     document.getElementById("label4"),
   ];
 
-  if (index < gameQuestions.length) {
+  if (index < questions.length) {
     for (let i = 0; i < answerLabels.length; i++) {
-      answerLabels[i].textContent = gameQuestions[index].options[i];
+      answerLabels[i].textContent = questions[index].options[i];
     }
     startNewCountdown();
   } else {
@@ -201,7 +309,7 @@ function correctAnswer() {
     const selectedAnswer = document
       .querySelector(`label[for="${selectedOption.id}"]`)
       .textContent.trim();
-    const correct = gameQuestions[currentQuestionIndex].correct;
+    const correct = questions[currentQuestionIndex].correct;
 
     if (selectedAnswer === correct) {
       alert("You're right buddy!");
@@ -230,7 +338,7 @@ document.getElementById("next-question").addEventListener("click", function () {
 function nextAnswer() {
   currentQuestionIndex++;
 
-  if (currentQuestionIndex < gameQuestions.length) {
+  if (currentQuestionIndex < questions.length) {
     showQuestion(currentQuestionIndex);
     startNewCountdown();
   } else {
@@ -310,19 +418,9 @@ function showScore() {
   nextScore.innerHTML = scoreMoney[currentScoreIndex + 1] || "1M";
 }
 
-function resetGame() {
-  currentQuestionIndex = 0;
-  currentScoreIndex = 0;
-  document.getElementById("submit-btn").disabled = false;
-  document.getElementById("next-question").disabled = true;
-  pauseCountdown();
-  showScore();
-  showReadyQuestion();
-}
-
 /* Take Money Button */
 
-document.getElementById("take-btn").addEventListener("click", function () {
+document.getElementById("take-btn").addEventListener('click', function () {
   exitGame();
 });
 
@@ -331,7 +429,7 @@ document.getElementById("quit").addEventListener("click", function () {
 });
 
 function takeMoney() {
-  let currentScore = showScore[currentScoreIndex];
+  const currentScore = scoreMoney[currentScoreIndex];
   alert(`You have won ${currentScore}!`);
 }
 
@@ -361,3 +459,15 @@ document.getElementById("stay").addEventListener("click", function () {
   closeExitGame();
   resumeCountdown();
 });
+
+/* Restart Game */
+
+function resetGame() {
+    currentQuestionIndex = 0;
+    currentScoreIndex = 0;
+    document.getElementById("submit-btn").disabled = false;
+    document.getElementById("next-question").disabled = true;
+    pauseCountdown();
+    showScore();
+    showReadyQuestion();
+  }
