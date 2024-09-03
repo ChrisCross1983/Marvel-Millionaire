@@ -368,6 +368,21 @@ function nextAnswer() {
     showQuestion(currentQuestionIndex);
     startNewCountdown();
     isQuestionAnswered = false;
+
+    // Reactivate disabled answers 
+    let answerOptions = document.querySelectorAll('input[name="answers"]');
+    answerOptions.forEach((option) => {
+      option.disabled = false;
+    });
+
+    // Restore opacity
+    let answerLabels = document.querySelectorAll(".answer-text");
+    answerLabels.forEach((label) => {
+      label.style.opacity = 1;
+    });
+
+    document.getElementById("joker-thanos").disabled = false;
+
   } else {
     alert("You've completed the Quiz!");
   }
