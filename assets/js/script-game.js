@@ -381,8 +381,6 @@ function nextAnswer() {
       label.style.opacity = 1;
     });
 
-    document.getElementById("joker-thanos").disabled = false;
-
   } else {
     alert("You've completed the Quiz!");
   }
@@ -405,11 +403,16 @@ function disableButton() {
 }
 
 /* Joker */
+
+let jokerUsed = false;
+
 /* 50:50 Joker Thanos */
 
 document.getElementById("joker-thanos").addEventListener("click", jokerThanos);
 
 function jokerThanos() {
+  if (jokerUsed) return;
+
   let incorrectAnswers = [];
   let correctAnswer = currentQuestion.correct;
 
@@ -445,6 +448,7 @@ function jokerThanos() {
   });
 
   document.getElementById("joker-thanos").disabled = true;
+  jokerUsed = true;
 }
 
 /* Countdown */
@@ -551,4 +555,6 @@ function resetGame() {
   pauseCountdown();
   showScore();
   showReadyQuestion();
+  jokerUsed = false;
+  document.getElementById("joker-thanos").disabled = false;
 }
