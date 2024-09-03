@@ -209,6 +209,7 @@ const scoreMoney = [
 /* Global variables timer and game questions */
 
 let questions = [];
+let isQuestionAnswered = false;
 let timer;
 let countdown = 120;
 
@@ -316,6 +317,7 @@ function correctAnswer() {
       increaseScore();
       showScore();
       enableButton();
+      isQuestionAnswered = true;
     } else {
       const currentScore = scoreMoney[currentQuestionIndex];
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
@@ -341,6 +343,7 @@ function nextAnswer() {
   if (currentQuestionIndex < questions.length) {
     showQuestion(currentQuestionIndex);
     startNewCountdown();
+    isQuestionAnswered = false;
   } else {
     alert("You've completed the Quiz!");
   }
@@ -387,7 +390,7 @@ function pauseCountdown() {
 /* Resume countdown */
 
 function resumeCountdown() {
-  if (countdown > 0) {
+  if (countdown > 0 && !isQuestionAnswered) {
     remainingTime();
   }
 }
