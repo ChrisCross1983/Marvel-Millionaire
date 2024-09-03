@@ -346,6 +346,7 @@ function correctAnswer() {
       const currentScore = scoreMoney[currentQuestionIndex];
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
       resetGame();
+      return;
     }
     pauseCountdown();
     document.getElementById("submit-btn").disabled = true;
@@ -369,7 +370,7 @@ function nextAnswer() {
     startNewCountdown();
     isQuestionAnswered = false;
 
-    // Reactivate disabled answers 
+    // Reactivate disabled answers
     let answerOptions = document.querySelectorAll('input[name="answers"]');
     answerOptions.forEach((option) => {
       option.disabled = false;
@@ -380,7 +381,6 @@ function nextAnswer() {
     answerLabels.forEach((label) => {
       label.style.opacity = 1;
     });
-
   } else {
     alert("You've completed the Quiz!");
   }
@@ -554,7 +554,22 @@ function resetGame() {
   document.getElementById("next-question").disabled = true;
   pauseCountdown();
   showScore();
-  showReadyQuestion();
+
+  const questionBox = document.getElementById("question-box");
+  questionBox.classList.remove("hidden");
+
+  let answerOptions = document.querySelectorAll('input[name="answers"]');
+  answerOptions.forEach((option) => {
+    option.disabled = false;
+    option.checked = false;
+  });
+
+  let answerLabels = document.querySelectorAll(".answer-text");
+  answerLabels.forEach((label) => {
+    label.style.opacity = 1;
+  });
+
   jokerUsed = false;
   document.getElementById("joker-thanos").disabled = false;
+  showReadyQuestion();
 }
