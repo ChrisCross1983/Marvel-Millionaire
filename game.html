@@ -82,9 +82,9 @@
             <i class="fa-regular fa-envelope"></i>
             Submit Answer
           </button>
-          <button data-type="take_money" class="btn btn-gold">
+          <button id="take-btn" data-type="take_money" class="btn btn-gold">
             <i class="fa-solid fa-sack-dollar"></i>
-            Take the money
+            Take money &amp; exit game
           </button>
           <button id="next-question" data-type="next" class="btn btn-blue">
             Next Question <i class="fa-solid fa-arrow-right"></i>
@@ -94,7 +94,7 @@
     </div>
     <div class="extras-wrapper">
       <div id="joker-box">
-        <a class="joker-icon" id="joker1" onclick="useJoker('joker1)">
+        <a class="joker-icon" id="joker1" onclick="useJoker('joker1')">
           <img src="assets/images/thanos.png" alt="Joker 1 - Thanos" />
         </a>
         <a class="joker-icon" id="joker2" onclick="useJoker('joker2')">
@@ -111,7 +111,6 @@
         <p id="timer">Remaining Time: <span id="seconds">60</span> Seconds</p>
       </div>
       <div id="score-box">
-        <img src="" alt="score bar" />
         <p id="current-score">actual Score</p>
         <p id="next-score">Next Win</p>
       </div>
@@ -138,6 +137,7 @@
     </div>
 
     <!-- Exit Button -->
+
     <div id="exit-select" class="modus hidden">
         <div class="hidden-content">
           <h2>Are you sure that you want to quit?</h2>

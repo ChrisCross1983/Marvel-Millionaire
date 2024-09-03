@@ -366,7 +366,7 @@ a:visited {
   }
 
   button {
-    min-width: 120px;
+    max-width: 200px;
     font-size: 18px;
     padding: 15px;
   }
@@ -432,10 +432,11 @@ a:visited {
     padding: 10px 0;
   }
 
-  button,
-  p {
+  button {
     font-size: 17px;
     min-width: 100px;
+    max-width: 150px;
+    padding: 10px;
   }
 }
 
@@ -468,12 +469,16 @@ a:visited {
   }
 
   .button-box {
-    gap: 60px;
+    gap: 50px;
     padding: 10px 0;
   }
 
   .img_text {
     font-size: 0.9em;
+  }
+
+  button {
+    max-width: 150px;
   }
 }
 
@@ -487,7 +492,8 @@ a:visited {
   }
 
   button {
-    max-width: 60px;
+    max-width: 50px;
+    padding: 5px;
   }
 
   .button-box {

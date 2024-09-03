@@ -238,7 +238,7 @@ function nextAnswer() {
   }
 }
 
-/* Enable & Disable next question button */
+/* Enable & Disable buttons */
 
 document.getElementById("next-question").disabled = true;
 
@@ -316,6 +316,22 @@ function resetGame() {
   pauseCountdown();
   showScore();
   showReadyQuestion();
+}
+
+/* Take Money Button */
+
+document.getElementById("take-btn").addEventListener("click", function () {
+    exitGame();
+  });
+
+document.getElementById("quit").addEventListener('click', function() {
+    takeMoney();
+});
+
+
+function takeMoney() {
+    let checkCurrentScore = showScore[currentScoreIndex];
+    alert("You have won ${checkCurrentScore}!");
 }
 
 /* Exit Game */
