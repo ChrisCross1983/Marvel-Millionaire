@@ -108,6 +108,9 @@ Example:
 ## Bugs
 
   - Solved Bugs: What the bug was and how you solved it.
+
+  Timer counts over 0 into minus area
+  
   - Known Bugs : What the bug is and why you decided to leave it.
   - Unfixed Bugs
 

@@ -263,7 +263,7 @@ function remainingTime() {
     countdown--;
     countdownDisplay.textContent = countdown;
 
-    if (countdown === 0) {
+    if (countdown <= 0) {
       clearInterval(timer);
       console.log("Countdown finished");
     }
@@ -279,15 +279,17 @@ function pauseCountdown() {
 /* Resume countdown */
 
 function resumeCountdown() {
+  if (countdown > 0) {
     remainingTime();
+  }
 }
 
 /* Start new countdown */
 
 function startNewCountdown() {
-    clearInterval(timer);
-    countdown = 120;
-    remainingTime();
+  clearInterval(timer);
+  countdown = 120;
+  remainingTime();
 }
 
 /* Score system */
@@ -321,17 +323,16 @@ function resetGame() {
 /* Take Money Button */
 
 document.getElementById("take-btn").addEventListener("click", function () {
-    exitGame();
-  });
-
-document.getElementById("quit").addEventListener('click', function() {
-    takeMoney();
+  exitGame();
 });
 
+document.getElementById("quit").addEventListener("click", function () {
+  takeMoney();
+});
 
 function takeMoney() {
-    let checkCurrentScore = showScore[currentScoreIndex];
-    alert("You have won ${checkCurrentScore}!");
+  let currentScore = showScore[currentScoreIndex];
+  alert(`You have won ${currentScore}!`);
 }
 
 /* Exit Game */
@@ -347,16 +348,16 @@ function exitGame() {
 }
 
 function closeExitGame() {
-    const closeExit = document.getElementById("exit-select");
-    closeExit.classList.add("hidden")
+  const closeExit = document.getElementById("exit-select");
+  closeExit.classList.add("hidden");
 }
 
-document.getElementById("quit").addEventListener('click', function() {
-    closeExitGame();
-    window.location.href = "index.html";
+document.getElementById("quit").addEventListener("click", function () {
+  closeExitGame();
+  window.location.href = "index.html";
 });
 
-document.getElementById("stay").addEventListener('click', function() {
-    closeExitGame();
-    resumeCountdown();
+document.getElementById("stay").addEventListener("click", function () {
+  closeExitGame();
+  resumeCountdown();
 });
