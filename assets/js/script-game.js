@@ -1,3 +1,6 @@
+/* jshint esnext: true */
+"use strict";
+
 /* Questions and Answers array */
 
 const normalQuestions = [
@@ -235,6 +238,7 @@ let questions = [];
 let isQuestionAnswered = false;
 let timer;
 let countdown = 120;
+let currentQuestion;
 
 /* Loading game questions */
 
@@ -473,6 +477,28 @@ function jokerThanos() {
 
   document.getElementById("joker-thanos").disabled = true;
   jokerUsed = true;
+}
+
+/* Hint Joker Rocket */
+
+const showHint = document.getElementById("hint-message");
+const addHint = document.querySelector('#hint-message p');
+document.getElementById("joker-rocket").addEventListener('click', jokerRocket);
+
+function jokerRocket() {
+    if (jokerUsed) return;
+    const collectHints = questions[currentQuestionIndex].hint;
+
+    showHint.classList.remove("hidden");
+    addHint.textContent = `Here is your hint: "${collectHints}"`;
+    document.getElementById("joker-rocket").disabled = true; 
+    jokerUsed = true;
+}
+
+const closeHintWindow = document.getElementById("btn-close").addEventListener('click', closeHint);
+
+function closeHint() {
+showHint.classList.add("hidden");
 }
 
 /* Countdown */
