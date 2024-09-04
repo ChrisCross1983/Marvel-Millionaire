@@ -478,15 +478,19 @@ function disableJokers() {
 function enableUnusedJokers() {
     if (!thanosJokerUsed) {
         document.getElementById("joker-thanos").disabled = false;
+        document.getElementById("joker-thanos").classList.remove("joker-used");
     }
     if (!rocketJokerUsed) {
         document.getElementById("joker-rocket").disabled = false;
+        document.getElementById("joker-rocket").classList.remove("joker-used");
     }
     if (!thorJokerUsed) {
         document.getElementById("joker-thor").disabled = false;
+        document.getElementById("joker-thor").classList.remove("joker-used");
     }
     if (!lokiJokerUsed) {
         document.getElementById("joker-loki").disabled = false;
+        document.getElementById("joker-loki").classList.remove("joker-used");
     }
 }
 
