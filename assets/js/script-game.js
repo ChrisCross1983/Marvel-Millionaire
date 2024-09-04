@@ -402,12 +402,13 @@ function nextAnswer() {
   currentQuestionIndex++;
 
   if (currentQuestionIndex < questions.length) {
+    resetAnswers();
     showQuestion(currentQuestionIndex);
     startNewCountdown();
     isQuestionAnswered = false;
     enableUnusedJokers();
 
-    // Reactivate disabled answers
+    /*// Reactivate disabled answers
     let answerOptions = document.querySelectorAll('input[name="answers"]');
     answerOptions.forEach((option) => {
       option.disabled = false;
@@ -418,7 +419,7 @@ function nextAnswer() {
     answerLabels.forEach((label) => {
       label.style.opacity = 1;
       label.classList.remove("selected-answer");
-    });
+    });*/
   } else {
     alert("You've completed the Quiz!");
   }
@@ -437,7 +438,7 @@ function disableJokers() {
   document.getElementById("joker-thanos").disabled = true;
   document.getElementById("joker-rocket").disabled = true;
   document.getElementById("joker-thor").disabled = true;
-  document.getElementById("joker-loki").disabled = true;
+  document.getElementById("joker-hulk").disabled = true;
 }
 
 function enableUnusedJokers() {
@@ -453,9 +454,9 @@ function enableUnusedJokers() {
     document.getElementById("joker-thor").disabled = false;
     document.getElementById("joker-thor").classList.remove("joker-used");
   }
-  if (!lokiJokerUsed) {
-    document.getElementById("joker-loki").disabled = false;
-    document.getElementById("joker-loki").classList.remove("joker-used");
+  if (!hulkJokerUsed) {
+    document.getElementById("joker-hulk").disabled = false;
+    document.getElementById("joker-hulk").classList.remove("joker-used");
   }
 }
 
@@ -542,27 +543,27 @@ function jokerThor() {
 
 /* Hulk Joker */
 
-document.getElementById("joker-hulk").addEventListener('click', jokerHulk);
+document.getElementById("joker-hulk").addEventListener("click", jokerHulk);
 
-function jokerHulk () {
-    if (hulkJokerUsed) return;
+function jokerHulk() {
+  if (hulkJokerUsed) return;
 
-    let incorrectAnswers = [];
-    let correctAnswer = currentQuestionIndex.correct;
-    
-    for (let i = 0; i < currentQuestion.options.length; i++) {
-          if (currentQuestion.options[i] !== correctAnswer) {
-            incorrectAnswers.push(currentQuestion.options[i]);
-          }
-        }
-        let randomIndex = Math.floor(Math.random() * incorrectAnswers.length);
-        let randomAnswer = incorrectAnswers[randomIndex];
+  let incorrectAnswers = [];
+  let correctAnswer = currentQuestion.correct;
 
-        let answerLabels = document.querySelectorAll(".answer-text");
-        answerLabels.forEach((label) => {
-        if (label.textContent === randomAnswer) {
-            label.previousElementSibling.disabled = true;
-            label.classList.add("smash");
+  for (let i = 0; i < currentQuestion.options.length; i++) {
+    if (currentQuestion.options[i] !== correctAnswer) {
+      incorrectAnswers.push(currentQuestion.options[i]);
+    }
+  }
+  let randomIndex = Math.floor(Math.random() * incorrectAnswers.length);
+  let randomAnswer = incorrectAnswers[randomIndex];
+
+  let answerLabels = document.querySelectorAll(".answer-text");
+  answerLabels.forEach((label) => {
+    if (label.textContent === randomAnswer) {
+      label.previousElementSibling.disabled = true;
+      label.classList.add("smash");
     }
   });
 
@@ -656,9 +657,9 @@ function closeExitGame() {
 /* Take Money Button */
 
 document.getElementById("take-btn").addEventListener("click", function () {
-    document.getElementById("take-select").classList.remove("hidden");
-    pauseCountdown();
-  });
+  document.getElementById("take-select").classList.remove("hidden");
+  pauseCountdown();
+});
 
 /* Yes */
 
@@ -675,13 +676,28 @@ function takeMoney() {
 /* No */
 
 document.getElementById("take-stay").addEventListener("click", function () {
-    closeTakeMoneyMessage();
-  });
+  closeTakeMoneyMessage();
+});
 
 function closeTakeMoneyMessage() {
   const takeMessage = document.getElementById("take-select");
   takeMessage.classList.add("hidden");
   resumeCountdown();
+}
+
+/* Refresh answer box */
+
+function resetAnswers() {
+  let answerLabels = document.querySelectorAll(".answer-text");
+  answerLabels.forEach((label) => {
+    label.classList.remove("selected-answer", "smash");
+    label.style.opacity = 1;
+  });
+  let answerOptions = document.querySelectorAll('input[name="answers"]');
+  answerOptions.forEach((option) => {
+    option.disabled = false;
+    option.checked = false;
+  });
 }
 
 /* Restart Game */
@@ -711,8 +727,9 @@ function resetGame() {
   thanosJokerUsed = false;
   rocketJokerUsed = false;
   thorJokerUsed = false;
-  lokiJokerUsed = false;
+  hulkJokerUsed = false;
 
+  resetAnswers();
   enableUnusedJokers();
   showReadyQuestion();
 }
