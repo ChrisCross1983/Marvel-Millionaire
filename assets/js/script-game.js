@@ -350,11 +350,10 @@ function correctAnswer() {
       .classList.add("selected-answer");
 
     if (selectedAnswer === correct) {
-      const nextScore = scoreMoney[currentQuestionIndex +1] || "1M";
-      showSuccessPopup(`You're right buddy! You reached ${nextScore}"`);
+      const nextScore = scoreMoney[currentQuestionIndex + 1] || "1M";
+      showSuccessPopup(`You're right buddy! You reached ${nextScore}`);
       increaseScore();
       showScore();
-      enableButton();
       isQuestionAnswered = true;
       disableJokers();
     } else {
@@ -435,10 +434,10 @@ let lokiJokerUsed = false;
 /* Enables or disables Jokers */
 
 function disableJokers() {
-    document.getElementById("joker-thanos").disabled = true;
-    document.getElementById("joker-rocket").disabled = true;
-    document.getElementById("joker-thor").disabled = true;
-    document.getElementById("joker-loki").disabled = true;
+  document.getElementById("joker-thanos").disabled = true;
+  document.getElementById("joker-rocket").disabled = true;
+  document.getElementById("joker-thor").disabled = true;
+  document.getElementById("joker-loki").disabled = true;
 }
 
 function enableUnusedJokers() {
@@ -521,8 +520,8 @@ function jokerRocket() {
   rocketJokerUsed = true;
 }
 
-document.getElementById("btn-close").addEventListener('click', function() {
-    closeHint();
+document.getElementById("btn-close").addEventListener("click", function () {
+  closeHint();
 });
 
 function closeHint() {
@@ -597,14 +596,44 @@ function showScore() {
   nextScore.innerHTML = scoreMoney[currentScoreIndex + 1] || "1M";
 }
 
-/* Take Money and exit Game Button */
+/* Exit Game Button */
 
-document.getElementById("take-btn").addEventListener("click", function () {
-  exitGame();
+document.getElementById("exit-btn").addEventListener("click", function () {
+  document.getElementById("exit-select").classList.remove("hidden");
+  pauseCountdown();
 });
 
+/* Yes and redirect to index */
+
 document.getElementById("quit").addEventListener("click", function () {
+  closeExitGame();
+  window.location.href = "index.html";
+});
+
+/* No and return to game */
+
+document.getElementById("stay").addEventListener("click", function () {
+  closeExitGame();
+  resumeCountdown();
+});
+
+function closeExitGame() {
+  const closeExit = document.getElementById("exit-select");
+  closeExit.classList.add("hidden");
+}
+
+/* Take Money Button */
+
+document.getElementById("take-btn").addEventListener("click", function () {
+    document.getElementById("take-select").classList.remove("hidden");
+    pauseCountdown();
+  });
+
+/* Yes */
+
+document.getElementById("take-leave").addEventListener("click", function () {
   takeMoney();
+  window.location.href = "index.html";
 });
 
 function takeMoney() {
@@ -612,28 +641,17 @@ function takeMoney() {
   alert(`You have won ${currentScore}!`);
 }
 
-/* Exit Game */
+/* No */
 
-function exitGame() {
-  const exit = document.getElementById("exit-select");
-  exit.classList.remove("hidden");
-  pauseCountdown();
-}
+document.getElementById("take-stay").addEventListener("click", function () {
+    closeTakeMoneyMessage();
+  });
 
-function closeExitGame() {
-  const closeExit = document.getElementById("exit-select");
-  closeExit.classList.add("hidden");
-}
-
-document.getElementById("quit").addEventListener("click", function () {
-  closeExitGame();
-  window.location.href = "index.html";
-});
-
-document.getElementById("stay").addEventListener("click", function () {
-  closeExitGame();
+function closeTakeMoneyMessage() {
+  const takeMessage = document.getElementById("take-select");
+  takeMessage.classList.add("hidden");
   resumeCountdown();
-});
+}
 
 /* Restart Game */
 
