@@ -166,16 +166,16 @@ a:visited {
 }
 
 .img_text_small {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    font-size: 15px;
-    padding: 4px;
-    min-width: 50px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    transform: translate(-50%, -50%);
-  }
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  font-size: 15px;
+  padding: 4px;
+  min-width: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+}
 
 #play,
 #rules {
@@ -269,15 +269,15 @@ a:visited {
 }
 
 .joker-used::after {
-    content: 'X';
-    color: red;
-    font-size: 40px;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
+  content: "X";
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .joker-icon img {
@@ -369,21 +369,34 @@ a:visited {
   display: none;
 }
 
-/* Pulsating button */
+/* Smash Effect */
 
-@keyframes pulse {
+.smash {
+    animation: shake 0.5s ease, fadeOut 0.8s forwards;
+    position: relative;
+}
+
+@keyframes shake {
   0% {
-    transform: scale(1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
   }
   50% {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
   }
   100% {
-    transform: scale(1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX();
   }
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
 
 .animate-button {

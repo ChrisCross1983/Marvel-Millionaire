@@ -562,7 +562,7 @@ function jokerHulk () {
         answerLabels.forEach((label) => {
         if (label.textContent === randomAnswer) {
             label.previousElementSibling.disabled = true;
-            label.style.opacity = 0.5;
+            label.classList.add("smash");
     }
   });
 
