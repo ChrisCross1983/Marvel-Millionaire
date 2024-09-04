@@ -239,6 +239,7 @@ let isQuestionAnswered = false;
 let timer;
 let countdown = 120;
 let currentQuestion;
+let currentQuestionIndex = 0;
 
 /* Loading game questions */
 
@@ -252,8 +253,6 @@ if (gameMode === "hard") {
 
 /* Question functionality */
 /* Ask initial question if player is ready */
-
-let currentQuestionIndex = 0;
 
 function showReadyQuestion() {
   const ready = document.getElementById("ready-question");
@@ -276,7 +275,7 @@ if (window.location.pathname.includes("game.html")) {
 
     document.getElementById("btn-ready").addEventListener("click", function () {
       closeReadyQuestion();
-      showScore(0);
+      showScore();
       showQuestion(0);
     });
   });
@@ -292,7 +291,6 @@ function showQuestion(index) {
 
   const questionHeader = document.querySelector("#question-box h3");
   if (index < questions.length) {
-    disableButton();
     questionHeader.textContent = questions[index].question;
     currentQuestion = questions[index];
     showAnswers(index);
@@ -352,8 +350,8 @@ function correctAnswer() {
       .classList.add("selected-answer");
 
     if (selectedAnswer === correct) {
-      const currentScore = scoreMoney[currentQuestionIndex];
-      showSuccessPopup(`You're right buddy! You have reached ${currentScore}"`);
+      const nextScore = scoreMoney[currentQuestionIndex +1] || "1M";
+      showSuccessPopup(`You're right buddy! You reached ${nextScore}"`);
       increaseScore();
       showScore();
       enableButton();
@@ -401,11 +399,6 @@ answerOptions.forEach((option) => {
 
 /* next question & answer */
 
-document.getElementById("next-question").addEventListener("click", function () {
-  this.classList.remove("animate-button");
-  nextAnswer();
-});
-
 function nextAnswer() {
   currentQuestionIndex++;
 
@@ -430,22 +423,6 @@ function nextAnswer() {
   } else {
     alert("You've completed the Quiz!");
   }
-}
-
-/* Enable & Disable buttons */
-
-document.getElementById("next-question").disabled = true;
-
-function enableButton() {
-  const nextQuestionButton = document.getElementById("next-question");
-  nextQuestionButton.disabled = false;
-  nextQuestionButton.classList.add("animate-button");
-}
-
-function disableButton() {
-  const nextQuestionButton = document.getElementById("next-question");
-  nextQuestionButton.disabled = true;
-  nextQuestionButton.classList.remove("animate-button");
 }
 
 /* Joker */
@@ -664,7 +641,6 @@ function resetGame() {
   currentQuestionIndex = 0;
   currentScoreIndex = 0;
   document.getElementById("submit-btn").disabled = false;
-  document.getElementById("next-question").disabled = true;
   pauseCountdown();
   showScore();
 
