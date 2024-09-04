@@ -432,14 +432,15 @@ function disableButton() {
 
 /* Joker */
 
-let jokerUsed = false;
+let thanosJokerUsed = false;
+let rocketJokerUsed = false
 
 /* 50:50 Joker Thanos */
 
 document.getElementById("joker-thanos").addEventListener("click", jokerThanos);
 
 function jokerThanos() {
-  if (jokerUsed) return;
+  if (thanosJokerUsed) return;
 
   let incorrectAnswers = [];
   let correctAnswer = currentQuestion.correct;
@@ -476,7 +477,7 @@ function jokerThanos() {
   });
 
   document.getElementById("joker-thanos").disabled = true;
-  jokerUsed = true;
+  thanosJokerUsed = true;
 }
 
 /* Hint Joker Rocket */
@@ -486,13 +487,13 @@ const addHint = document.querySelector('#hint-message p');
 document.getElementById("joker-rocket").addEventListener('click', jokerRocket);
 
 function jokerRocket() {
-    if (jokerUsed) return;
+    if (rocketJokerUsed) return;
     const collectHints = questions[currentQuestionIndex].hint;
 
     showHint.classList.remove("hidden");
     addHint.textContent = `Here is your hint: "${collectHints}"`;
     document.getElementById("joker-rocket").disabled = true; 
-    jokerUsed = true;
+    rocketJokerUsed = true;
 }
 
 const closeHintWindow = document.getElementById("btn-close").addEventListener('click', closeHint);
@@ -620,7 +621,7 @@ function resetGame() {
     label.classList.remove("selected-answer");
   });
 
-  jokerUsed = false;
+  thanosJokerUsed = false;
   document.getElementById("joker-thanos").disabled = false;
   showReadyQuestion();
 }
