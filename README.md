@@ -131,7 +131,7 @@ Example:
    - Favicon Title - realfavicongenerator.net
    - Favicon Document - fontawesome.com
 
-  - Joker Images - freepik.com and wallpapercave.com
+  - Joker Images - freepik.com, wallpapers.com and wallpapercave.com
 
   ### Acknowledgements
 

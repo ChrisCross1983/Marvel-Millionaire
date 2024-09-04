@@ -352,12 +352,12 @@ function correctAnswer() {
       .classList.add("selected-answer");
 
     if (selectedAnswer === correct) {
-      alert("You're right buddy!");
+      const currentScore = scoreMoney[currentQuestionIndex];
+      showSuccessPopup(`You're right buddy! You have reached ${currentScore}"`);
       increaseScore();
       showScore();
       enableButton();
       isQuestionAnswered = true;
-      console.log("Correct answer given, disabling jokers...");
       disableJokers();
     } else {
       const currentScore = scoreMoney[currentQuestionIndex];
@@ -370,6 +370,21 @@ function correctAnswer() {
   } else {
     alert("Please select an answer before submitting");
   }
+}
+
+/* Success Popup */
+
+function showSuccessPopup(message) {
+  const successPopup = document.getElementById("success-popup");
+  const successMessage = document.getElementById("success-message");
+
+  successMessage.textContent = message;
+  successPopup.classList.remove("hidden");
+
+  document.getElementById("btn-next").addEventListener("click", function () {
+    successPopup.classList.add("hidden");
+    nextAnswer();
+  });
 }
 
 const answerOptions = document.querySelectorAll('input[name="answers"]');
@@ -443,55 +458,29 @@ let lokiJokerUsed = false;
 /* Enables or disables Jokers */
 
 function disableJokers() {
-    console.log("disableJokers called");
-
-    /* document.getElementById("joker-thanos").disabled = true;
+    document.getElementById("joker-thanos").disabled = true;
     document.getElementById("joker-rocket").disabled = true;
     document.getElementById("joker-thor").disabled = true;
-    document.getElementById("joker-loki").disabled = true;*/
-   
-    let thanosButton = document.getElementById("joker-thanos");
-    let rocketButton = document.getElementById("joker-rocket");
-    let thorButton = document.getElementById("joker-thor");
-    let lokiButton = document.getElementById("joker-loki"); 
-
-    console.log(thanosButton, rocketButton, thorButton, lokiButton); // Debugging: Prüfen ob die Buttons korrekt ausgewählt werden
-
-    if (thanosButton) {
-        thanosButton.disabled = true;
-        console.log('Thanos Joker disabled:', thanosButton.disabled); // Überprüfe den Zustand nach dem Deaktivieren
-    }
-    if (rocketButton) {
-        rocketButton.disabled = true;
-        console.log('Rocket Joker disabled:', rocketButton.disabled);
-    }
-    if (thorButton) {
-        thorButton.disabled = true;
-        console.log('Thor Joker disabled:', thorButton.disabled);
-    }
-    if (lokiButton) {
-        lokiButton.disabled = true;
-        console.log('Loki Joker disabled:', lokiButton.disabled);
-    }
+    document.getElementById("joker-loki").disabled = true;
 }
 
 function enableUnusedJokers() {
-    if (!thanosJokerUsed) {
-        document.getElementById("joker-thanos").disabled = false;
-        document.getElementById("joker-thanos").classList.remove("joker-used");
-    }
-    if (!rocketJokerUsed) {
-        document.getElementById("joker-rocket").disabled = false;
-        document.getElementById("joker-rocket").classList.remove("joker-used");
-    }
-    if (!thorJokerUsed) {
-        document.getElementById("joker-thor").disabled = false;
-        document.getElementById("joker-thor").classList.remove("joker-used");
-    }
-    if (!lokiJokerUsed) {
-        document.getElementById("joker-loki").disabled = false;
-        document.getElementById("joker-loki").classList.remove("joker-used");
-    }
+  if (!thanosJokerUsed) {
+    document.getElementById("joker-thanos").disabled = false;
+    document.getElementById("joker-thanos").classList.remove("joker-used");
+  }
+  if (!rocketJokerUsed) {
+    document.getElementById("joker-rocket").disabled = false;
+    document.getElementById("joker-rocket").classList.remove("joker-used");
+  }
+  if (!thorJokerUsed) {
+    document.getElementById("joker-thor").disabled = false;
+    document.getElementById("joker-thor").classList.remove("joker-used");
+  }
+  if (!lokiJokerUsed) {
+    document.getElementById("joker-loki").disabled = false;
+    document.getElementById("joker-loki").classList.remove("joker-used");
+  }
 }
 
 /* 50:50 Joker Thanos */
@@ -520,8 +509,6 @@ function jokerThanos() {
   let randomIndex2 = Math.floor(Math.random() * incorrectAnswers.length);
   let randomAnswer2 = incorrectAnswers[randomIndex2];
 
-  console.log(randomAnswer1, randomAnswer2);
-
   /* Disable the random answers */
 
   let answerLabels = document.querySelectorAll(".answer-text");
@@ -543,36 +530,38 @@ function jokerThanos() {
 /* Hint Joker Rocket */
 
 const showHint = document.getElementById("hint-message");
-const addHint = document.querySelector('#hint-message p');
-document.getElementById("joker-rocket").addEventListener('click', jokerRocket);
+const addHint = document.querySelector("#hint-message p");
+document.getElementById("joker-rocket").addEventListener("click", jokerRocket);
 
 function jokerRocket() {
-    if (rocketJokerUsed) return;
-    const collectHints = questions[currentQuestionIndex].hint;
+  if (rocketJokerUsed) return;
+  const collectHints = questions[currentQuestionIndex].hint;
 
-    showHint.classList.remove("hidden");
-    addHint.textContent = `Here is your hint: "${collectHints}"`;
-    document.getElementById("joker-rocket").disabled = true;
-    document.getElementById("joker-rocket").classList.add("joker-used");
-    rocketJokerUsed = true;
+  showHint.classList.remove("hidden");
+  addHint.textContent = `Here is your hint: "${collectHints}"`;
+  document.getElementById("joker-rocket").disabled = true;
+  document.getElementById("joker-rocket").classList.add("joker-used");
+  rocketJokerUsed = true;
 }
 
-const closeHintWindow = document.getElementById("btn-close").addEventListener('click', closeHint);
+document.getElementById("btn-close").addEventListener('click', function() {
+    closeHint();
+});
 
 function closeHint() {
-showHint.classList.add("hidden");
+  showHint.classList.add("hidden");
 }
 
 /* Stop Timer Joker Thor */
 
-document.getElementById("joker-thor").addEventListener('click', jokerThor);
+document.getElementById("joker-thor").addEventListener("click", jokerThor);
 
 function jokerThor() {
-    if (thorJokerUsed) return;
-    pauseCountdown();
-    document.getElementById("joker-thor").disabled = true;
-    document.getElementById("joker-thor").classList.add("joker-used");
-    thorJokerUsed = true;
+  if (thorJokerUsed) return;
+  pauseCountdown();
+  document.getElementById("joker-thor").disabled = true;
+  document.getElementById("joker-thor").classList.add("joker-used");
+  thorJokerUsed = true;
 }
 
 /* Countdown */
