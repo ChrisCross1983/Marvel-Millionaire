@@ -124,6 +124,7 @@ Example:
    - How to create an pulsating button - https://stackoverflow.com/questions/22163163/how-to-do-a-dynamic-pulsating-button-in-javascript & https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
    - How to check if action is completed - https://stackoverflow.com/questions/36506931/javascript-how-to-check-if-operation-has-been-completed-on-this-event
    - How to create random values - https://www.w3schools.com/js/js_random.asp
+   - How to use trim method - https://www.w3schools.com/jsref/jsref_trim_string.asp
 
   ### Media
    - Hero Background - wallpapers.com

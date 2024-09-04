@@ -357,6 +357,8 @@ function correctAnswer() {
       showScore();
       enableButton();
       isQuestionAnswered = true;
+      console.log("Correct answer given, disabling jokers...");
+      disableJokers();
     } else {
       const currentScore = scoreMoney[currentQuestionIndex];
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
@@ -396,6 +398,7 @@ function nextAnswer() {
     showQuestion(currentQuestionIndex);
     startNewCountdown();
     isQuestionAnswered = false;
+    enableUnusedJokers();
 
     // Reactivate disabled answers
     let answerOptions = document.querySelectorAll('input[name="answers"]');
@@ -433,7 +436,59 @@ function disableButton() {
 /* Joker */
 
 let thanosJokerUsed = false;
-let rocketJokerUsed = false
+let rocketJokerUsed = false;
+let thorJokerUsed = false;
+let lokiJokerUsed = false;
+
+/* Enables or disables Jokers */
+
+function disableJokers() {
+    console.log("disableJokers called");
+
+    /* document.getElementById("joker-thanos").disabled = true;
+    document.getElementById("joker-rocket").disabled = true;
+    document.getElementById("joker-thor").disabled = true;
+    document.getElementById("joker-loki").disabled = true;*/
+   
+    let thanosButton = document.getElementById("joker-thanos");
+    let rocketButton = document.getElementById("joker-rocket");
+    let thorButton = document.getElementById("joker-thor");
+    let lokiButton = document.getElementById("joker-loki"); 
+
+    console.log(thanosButton, rocketButton, thorButton, lokiButton); // Debugging: Prüfen ob die Buttons korrekt ausgewählt werden
+
+    if (thanosButton) {
+        thanosButton.disabled = true;
+        console.log('Thanos Joker disabled:', thanosButton.disabled); // Überprüfe den Zustand nach dem Deaktivieren
+    }
+    if (rocketButton) {
+        rocketButton.disabled = true;
+        console.log('Rocket Joker disabled:', rocketButton.disabled);
+    }
+    if (thorButton) {
+        thorButton.disabled = true;
+        console.log('Thor Joker disabled:', thorButton.disabled);
+    }
+    if (lokiButton) {
+        lokiButton.disabled = true;
+        console.log('Loki Joker disabled:', lokiButton.disabled);
+    }
+}
+
+function enableUnusedJokers() {
+    if (!thanosJokerUsed) {
+        document.getElementById("joker-thanos").disabled = false;
+    }
+    if (!rocketJokerUsed) {
+        document.getElementById("joker-rocket").disabled = false;
+    }
+    if (!thorJokerUsed) {
+        document.getElementById("joker-thor").disabled = false;
+    }
+    if (!lokiJokerUsed) {
+        document.getElementById("joker-loki").disabled = false;
+    }
+}
 
 /* 50:50 Joker Thanos */
 
@@ -500,6 +555,17 @@ const closeHintWindow = document.getElementById("btn-close").addEventListener('c
 
 function closeHint() {
 showHint.classList.add("hidden");
+}
+
+/* Stop Timer Joker Thor */
+
+document.getElementById("joker-thor").addEventListener('click', jokerThor);
+
+function jokerThor() {
+    if (thorJokerUsed) return;
+    pauseCountdown();
+    document.getElementById("joker-thor").disabled = true;
+    thorJokerUsed = true;
 }
 
 /* Countdown */
@@ -622,6 +688,10 @@ function resetGame() {
   });
 
   thanosJokerUsed = false;
-  document.getElementById("joker-thanos").disabled = false;
+  rocketJokerUsed = false;
+  thorJokerUsed = false;
+  lokiJokerUsed = false;
+
+  enableUnusedJokers();
   showReadyQuestion();
 }
