@@ -227,10 +227,10 @@ a:visited {
 }
 
 .selected-answer {
-    background-color: #aa2929;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 5px;
+  background-color: #aa2929;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 /* Joker Styling */
@@ -247,11 +247,24 @@ a:visited {
 }
 
 .joker-icon {
+  position: relative;
   background-color: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
   max-width: fit-content;
+}
+
+.joker-used::after {
+    content: 'X';
+    color: red;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 .joker-icon img {

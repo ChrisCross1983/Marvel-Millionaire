@@ -532,6 +532,7 @@ function jokerThanos() {
   });
 
   document.getElementById("joker-thanos").disabled = true;
+  document.getElementById("joker-thanos").classList.add("joker-used");
   thanosJokerUsed = true;
 }
 
@@ -547,7 +548,8 @@ function jokerRocket() {
 
     showHint.classList.remove("hidden");
     addHint.textContent = `Here is your hint: "${collectHints}"`;
-    document.getElementById("joker-rocket").disabled = true; 
+    document.getElementById("joker-rocket").disabled = true;
+    document.getElementById("joker-rocket").classList.add("joker-used");
     rocketJokerUsed = true;
 }
 
@@ -565,6 +567,7 @@ function jokerThor() {
     if (thorJokerUsed) return;
     pauseCountdown();
     document.getElementById("joker-thor").disabled = true;
+    document.getElementById("joker-thor").classList.add("joker-used");
     thorJokerUsed = true;
 }
 
