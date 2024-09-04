@@ -165,6 +165,18 @@ a:visited {
   transform: translate(-50%, -50%);
 }
 
+.img_text_small {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    font-size: 15px;
+    padding: 4px;
+    min-width: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+  }
+
 #play,
 #rules {
   width: 100%;

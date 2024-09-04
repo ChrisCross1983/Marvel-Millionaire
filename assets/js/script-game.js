@@ -429,7 +429,7 @@ function nextAnswer() {
 let thanosJokerUsed = false;
 let rocketJokerUsed = false;
 let thorJokerUsed = false;
-let lokiJokerUsed = false;
+let hulkJokerUsed = false;
 
 /* Enables or disables Jokers */
 
@@ -538,6 +538,37 @@ function jokerThor() {
   document.getElementById("joker-thor").disabled = true;
   document.getElementById("joker-thor").classList.add("joker-used");
   thorJokerUsed = true;
+}
+
+/* Hulk Joker */
+
+document.getElementById("joker-hulk").addEventListener('click', jokerHulk);
+
+function jokerHulk () {
+    if (hulkJokerUsed) return;
+
+    let incorrectAnswers = [];
+    let correctAnswer = currentQuestionIndex.correct;
+    
+    for (let i = 0; i < currentQuestion.options.length; i++) {
+          if (currentQuestion.options[i] !== correctAnswer) {
+            incorrectAnswers.push(currentQuestion.options[i]);
+          }
+        }
+        let randomIndex = Math.floor(Math.random() * incorrectAnswers.length);
+        let randomAnswer = incorrectAnswers[randomIndex];
+
+        let answerLabels = document.querySelectorAll(".answer-text");
+        answerLabels.forEach((label) => {
+        if (label.textContent === randomAnswer) {
+            label.previousElementSibling.disabled = true;
+            label.style.opacity = 0.5;
+    }
+  });
+
+  document.getElementById("joker-hulk").disabled = true;
+  document.getElementById("joker-hulk").classList.add("joker-used");
+  hulkJokerUsed = true;
 }
 
 /* Countdown */
