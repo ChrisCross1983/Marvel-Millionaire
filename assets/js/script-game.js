@@ -46,7 +46,7 @@ function showReadyQuestion() {
   const ready = document.getElementById("ready-question");
   const readyText = document.querySelector("#ready-question p");
 
-  readyText.innerHTML = `Prepare for your first question and<br /> remember to keep an eye on the countdown!`;
+  readyText.innerHTML = `Prepare for your first question and<br/> remember to keep an eye on the countdown!`;
   ready.classList.remove("hidden");
 }
 
@@ -141,13 +141,14 @@ function correctAnswer() {
 
     if (selectedAnswer === correct) {
       increaseScore();
+      currentQuestionIndex++;
       const nextScore = scoreMoney[currentScoreIndex] || "1M";
       showSuccessPopup(`You're right buddy! You reached ${nextScore}`);
       console.log("Actual Score after increasing: ", currentScoreIndex);
       showScore();
       isQuestionAnswered = true;
       disableJokers();
-      nextAnswer();
+      
     } else {
       const currentScore = scoreMoney[currentScoreIndex];
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
@@ -198,15 +199,12 @@ function nextAnswer() {
 
   console.log("Call of nextAnswer at Index: ", currentQuestionIndex);
 
-  if (currentQuestionIndex >= questions.length -1) {
+  if (currentQuestionIndex >= questions.length) {
     console.error('No more questions available.');
     alert("You've completed the Quiz!");
     answeringInProgress = false; // Flag zurücksetzen, bevor die Funktion endet
     return;
   }
-
-  currentQuestionIndex++;
-
     resetAnswers();
     showQuestion(currentQuestionIndex);
     startNewCountdown();
