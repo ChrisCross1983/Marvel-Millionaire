@@ -1,45 +1,50 @@
-## Project Introduction
+# Marvel Millionaire - Project Portfolio 2 - HTML, CSS, JavaScript
 
-  - Name Title 
-  - Description
-  - Image (amiresponsive)
-  - Link to deployed site: [https://chriscross1983.github.io/pp2/]
-  - Optional: Shields.io badges
-    ○ Helpful links: 
-    https://amiresponsive.co.uk/
-    https://shields.io/
+Marvel Millionaire is an engaging quiz game that tests your knowledge of the Marvel Universe. Designed to provide a fun and interactive experience, this game challenges players with a series of questions about Marvel characters, storylines, and trivia. The game features different modes, including a normal and hard version, catering to both casual fans and hardcore Marvel enthusiasts.
 
-## Objectives
+![Responsive Mockup](readme-img\mockup.png)
 
-## User Experince (UX) 
-  ### Target Audience 
-  ### User Stories
- ### Site goals
-The goal of the site is to provide animal / nature and travel affine people from all over the world with an easy to navigate and informative website. The site aims to present the necessary information in a easy, straight forward and intuitive way. That includes details about the work of the organisation and their main projects, also showing relevant volunteering packages to book and alternative options of support, as well as provide a way of contacting the organisation for potential new members.
+You can explore the live site here: [Welcome to Marvel Millionaire](https://chriscross1983.github.io/pp2/)
 
- - First time user experience
- - Returning user
- - PP4 & PP5 add detailed user stories
+## Objective
 
-Example:
+The goal of the Marvel Millionaire game is to offer an entertaining and educational experience for Marvel fans. Players are encouraged to test their knowledge, learn new facts, and enjoy a visually engaging interface inspired by Marvel's iconic themes.
 
-  User Stories
+## User Experince (UX)
 
-  As a site visitor:
+### Target Audience
 
-  I want
-  I want
-  I want
+- Marvel fans of all ages
+- Trivia and quiz enthusiasts
+- Individuals interested in learning more about Marvel Universe characters and stories
 
-  As the site administrator:
-  I want
-  I want
-  I want
+### User Stories
+
+- As a player, I want to start a quiz easily and select my preferred difficulty level.
+- As a player, I want to understand the rules before starting the game.
+- As a player, I want to be able to use hints or jokers if I get stuck on a question.
+- As a player, I want to see my score progress as I answer questions correctly.
+- As a player, I want the ability to take my winnings and exit the game at any point.
+
+### Site goals
+
+- To provide an interactive and engaging quiz experience centered around Marvel trivia.
+- To educate players about the Marvel Universe in a fun and challenging way.
+- To create a visually appealing interface that aligns with Marvel's branding and aesthetics.
+- To offer a responsive design that works well on desktop, tablet, and mobile devices.
 
 ## Design
 
-  - Color Scheme
-  - Typography
+### Color Scheme
+
+The color scheme of Marvel Millionaire is inspired by the bold and dynamic colors commonly associated with Marvel comics and movies. The design uses a mix of dark tones for backgrounds with vibrant reds, blues, and greens for buttons and interactive elements. This combination creates a dynamic and visually engaging user experience.
+
+Screenshot
+
+### Typography
+
+The font choices for the game are strong and clear, aligning with the superhero theme. A bold, sans-serif font is used for headings and buttons to ensure readability and impact, while a more subtle sans-serif font is used for body text, creating a balance between style and readability.
+
   - Imagery
   - Wireframes
   - Site Structure

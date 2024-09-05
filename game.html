@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Marvel Millionaire</title>
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="assets/images/favicon/apple-touch-icon.png"
-    />
+      href="assets/images/favicon/apple-touch-icon.png">
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="assets/images/favicon/favicon-32x32.png"
-    />
+      href="assets/images/favicon/favicon-32x32.png">
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="assets/images/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+      href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     <link
       rel="mask-icon"
       href="assets/images/favicon/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+      color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <h1 class="heading" id="header-home">
       <a href="index.html"
-        ><i class="fa-regular fa-gem"></i> Marvel Millionaire</a
-      >
+        ><i class="fa-regular fa-gem"></i> Marvel Millionaire</a>
     </h1>
     <div class="game-wrapper">
       <div id="game-area">
-        <div id="question-box"><h3></h3></div>
+        <div id="question-box"><h3>Header</h3></div>
         <div id="answer-container">
           <div class="answer-box">
             <i class="fa-solid fa-a"></i>
-            <input type="radio" id="answer1" name="answers" />
+            <input type="radio" id="answer1" name="answers">
             <label for="answer1" class="answer-text" id="label1"></label>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-b"></i>
-            <input type="radio" id="answer2" name="answers" />
+            <input type="radio" id="answer2" name="answers">
             <label for="answer2" class="answer-text" id="label2"></label>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-c"></i>
-            <input type="radio" id="answer3" name="answers" />
+            <input type="radio" id="answer3" name="answers">
             <label for="answer3" class="answer-text" id="label3"></label>
           </div>
           <div class="answer-box">
             <i class="fa-solid fa-d"></i>
-            <input type="radio" id="answer4" name="answers" />
+            <input type="radio" id="answer4" name="answers">
             <label for="answer4" class="answer-text" id="label4"></label>
           </div>
         </div>
@@ -78,7 +72,7 @@
             <i class="fa-solid fa-sack-dollar"></i> Take money
           </button>
           <button id="exit-btn" data-type="exit" class="btn btn-red">
-            <i class="fa-regular fa-circle-xmark"></i></i> Exit game
+            <i class="fa-regular fa-circle-xmark"></i> Exit game
           </button>
         </div>
       </div>
@@ -86,16 +80,16 @@
     <div class="extras-wrapper">
       <div id="joker-box">
         <button class="joker-icon" id="joker-thanos">
-          <img src="assets/images/thanos.png" alt="Shows joker as Thanos" /><div class="img_text_small">50:50</div>
+          <img src="assets/images/thanos.png" alt="Shows joker as Thanos"><span class="img_text_small">50:50</span>
         </button>
         <button class="joker-icon" id="joker-rocket">
-          <img src="assets/images/rocket.webp" alt="Shows joker as Rocket" /><div class="img_text_small">Hint</div>
+          <img src="assets/images/rocket.webp" alt="Shows joker as Rocket"><span class="img_text_small">Hint</span>
         </button>
         <button class="joker-icon" id="joker-thor">
-          <img src="assets/images/thor.png" alt="Shows joker as Thor" /><div class="img_text_small">Thunder</div>
+          <img src="assets/images/thor.png" alt="Shows joker as Thor"><span class="img_text_small">Thunder</span>
         </button>
         <button class="joker-icon" id="joker-hulk">
-          <img src="assets/images/hulk.webp" alt="Shows joker as Hulk" /><div class="img_text_small">Smash</div>
+          <img src="assets/images/hulk.webp" alt="Shows joker as Hulk"><span class="img_text_small">Smash</span>
         </button>
       </div>
       <div id="countdown-box">
@@ -164,7 +158,8 @@
       </div>
     </div>
 
-    <!-- JavaScript File -->
+    <!-- JavaScript Files -->
+    <script src="assets/js/script-questions.js"></script>
     <script src="assets/js/script-game.js"></script>
   </body>
 </html>
