@@ -370,9 +370,14 @@ function jokerHulk() {
     }
   }
 
-  if (incorrectAnswers.length > 0) {
-    let randomIndex = Math.floor(Math.random() * incorrectAnswers.length);
-    let randomAnswer = incorrectAnswers[randomIndex];
+  let availableIncorrectAnswers = incorrectAnswers.filter(answer => {
+    let answerLabel = Array.from(document.querySelectorAll(".answer-text")).find(label => label.textContent === answer);
+    return answerLabel && !answerLabel.previousElementSibling.disabled;
+  });
+
+  if (availableIncorrectAnswers.length > 0) {
+    let randomIndex = Math.floor(Math.random() * availableIncorrectAnswers.length);
+    let randomAnswer = availableIncorrectAnswers[randomIndex];
 
     let answerLabels = document.querySelectorAll(".answer-text");
     answerLabels.forEach((label) => {
