@@ -151,6 +151,8 @@ This is a guide on how to clone a repository from GitHub.
 
 # Testing
 
+## Code Validation
+
 Marvel Millionaire has been validated via W3C HTML Validator and the W3C CSS Validator. There were two small error categories coming up on different on the game.html page, which are fixed and reported in the bugs section.
 
 W3C Code Validation - index.html:
@@ -165,26 +167,48 @@ W3C Code Validation - CSS:
 
 ![Image of W3 CSS Code Validation](readme-img\w3c_css.png)
 
+## Responsiveness
 
-- Responsiveness
-- Lighthouse Testing
-- Accessibility Testing
-- Manuel Testing / Testing User Stories / (Automated Testing)
+Responsiveness was tested by a few different mediums manually (Apple iphone XS, iphone 14pro and iPad Pro), including Chrome Devtools and the [Responsivetesttool](https://responsivetesttool.com/)
 
-## Bugs
+<details> <summary>See Responsiveness Screenshots</summary>
 
-- Solved Bugs:
+Mobile:
+
+![Index Responsive on mobile](readme-img\mobile_index.png)
+![GameResponsive on mobile](readme-img\mobile_game.png)
+
+Tablet:
+
+![Index Responsive on tablet](readme-img\tablet_index.png)
+![Game Responsive on tablet](readme-img\tablet_game.png)
+
+Laptop:
+
+![Index Responsive on Laptop](readme-img\laptop_index.png)
+![Game Responsive on Laptop](readme-img\laptop_game.png)
+
+</details>
+
+## Lighthouse Testing
+
+## Accessibility Testing
+
+## Manuel Testing / Testing User Stories / (Automated Testing)
+
+# Bugs
+
+## Solved Bugs:
   - Div Section inside an h element
-  - Formating problems due to an unnecessary backslash (...... / >) set by the VS Code extension "Prettier". 
+  - Formating problems due to an unnecessary backslash (...... / >) set by the VS Code extension "Prettier"
+  - Timer counts over 0 into minus area
 
-Timer counts over 0 into minus area
+## Knows Bugs : What the bug is and why you decided to leave it.
+## Unfixed Bugs
 
-- Known Bugs : What the bug is and why you decided to leave it.
-- Unfixed Bugs
+# Credits
 
-## Credits
-
-### Content and Code
+## Content and Code
 
 - How to rotate an img - https://www.w3schools.com/howto/howto_css_flip_image.asp
 - How to load another page with JS - https://www.w3schools.com/jsref/event_onload.asp
@@ -196,7 +220,7 @@ Timer counts over 0 into minus area
 - How to use trim method - https://www.w3schools.com/jsref/jsref_trim_string.asp
 - How to create shake effect - https://www.w3schools.com/howto/howto_css_shake_image.asp
 
-### Media
+## Media
 
 - Hero Background - wallpapers.com
 - Favicon Title - realfavicongenerator.net
@@ -205,4 +229,4 @@ Timer counts over 0 into minus area
 - Joker Images - freepik.com, wallpapers.com and wallpapercave.com
 - Background Music - [Link to website](https://pixabay.com/sound-effects/search/music/)
 
-### Acknowledgements
+## Acknowledgements
