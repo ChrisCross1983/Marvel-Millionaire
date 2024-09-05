@@ -202,6 +202,8 @@ function nextAnswer() {
   if (currentQuestionIndex >= questions.length) {
     console.error('No more questions available.');
     alert("You've completed the Quiz!");
+
+    resetGame();
     answeringInProgress = false; // Flag zurücksetzen, bevor die Funktion endet
     return;
   }

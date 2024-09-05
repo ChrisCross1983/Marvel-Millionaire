@@ -80,12 +80,6 @@ const normalQuestions = [
       hint: "She is the Goddess of Death and Thor's sister.",
     },
     {
-      question: "What is the name of the organization led by Nick Fury?",
-      options: ["SHIELD", "Hydra", "The Avengers", "The Hand"],
-      correct: "SHIELD",
-      hint: "This organization deals with espionage and threats to Earth.",
-    },
-    {
       question: "What is the name of the prison where many supervillains are kept?",
       options: ["The Raft", "Arkham Asylum", "The Vault", "The Triskelion"],
       correct: "The Raft",
