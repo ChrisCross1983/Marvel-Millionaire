@@ -329,13 +329,21 @@ a:visited {
   gap: 20px;
 }
 
-#timer {
+#timer, #a-score, #n-score {
   border: 1px solid white;
   border-radius: 25px;
   background-color: black;
   margin: 0;
   min-width: min-content;
   padding: 10px;
+}
+
+#a-score {
+  background-color: rgb(6, 121, 160);
+}
+
+#n-score {
+  background-color: rgb(85, 38, 129);
 }
 
 #timer span {
@@ -562,6 +570,10 @@ a:visited {
 
   .img_text_small {
     font-size: 0.8em;
+  }
+
+  #a-score, #n-score {
+    font-size: 0.9em;
   }
 
   button {
