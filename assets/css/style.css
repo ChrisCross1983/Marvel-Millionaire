@@ -355,7 +355,7 @@ a:visited {
   margin: 0 auto;
   max-width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 /* Javascript Styling */
@@ -423,7 +423,7 @@ a:visited {
     transform: translateX(-5px);
   }
   100% {
-    transform: translateX();
+    transform: translateX(0);
   }
 }
 
@@ -498,7 +498,7 @@ a:visited {
   }
 
   .flip-box-wrapper {
-    top: 100px;
+    top: 30px;
   }
 
   .button-box {
