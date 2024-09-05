@@ -399,10 +399,6 @@ a:visited {
     100% {opacity: 0;}
 }
 
-.animate-button {
-  animation: pulse 1s infinite;
-}
-
 /* Media Queries for larger screens */
 
 @media (min-width: 1024px) {

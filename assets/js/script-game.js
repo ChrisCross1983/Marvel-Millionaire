@@ -486,12 +486,25 @@ document.getElementById("take-btn").addEventListener("click", function () {
 
 document.getElementById("take-leave").addEventListener("click", function () {
   takeMoney();
-  window.location.href = "index.html";
 });
 
 function takeMoney() {
   const currentScore = scoreMoney[currentScoreIndex];
-  alert(`You have won ${currentScore}!`);
+  showMessage(`Thanks for playing, you have won ${currentScore}!`);
+  document.getElementById("take-select").classList.add("hidden");
+}
+
+function showMessage(message) {
+  const messageBox = document.getElementById("message-box");
+  const messageText = document.getElementById("message-text");
+
+  messageText.textContent = message;
+  messageBox.classList.remove("hidden");
+
+  document.getElementById("close-message").addEventListener("click", function() {
+    messageBox.classList.add("hidden");
+    window.location.href = "index.html";
+  });
 }
 
 /* No */
