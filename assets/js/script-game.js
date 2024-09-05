@@ -26,6 +26,7 @@ let timer;
 let countdown = 120;
 let currentQuestion;
 let currentQuestionIndex = 0;
+let isCountdownStopped = false;
 
 /* Loading game questions */
 
@@ -349,6 +350,7 @@ document.getElementById("joker-thor").addEventListener("click", jokerThor);
 function jokerThor() {
   if (thorJokerUsed) return;
   pauseCountdown();
+  isCountdownStopped = true;
   document.getElementById("joker-thor").disabled = true;
   document.getElementById("joker-thor").classList.add("joker-used");
   thorJokerUsed = true;
@@ -418,7 +420,7 @@ function pauseCountdown() {
 /* Resume countdown */
 
 function resumeCountdown() {
-  if (countdown > 0 && !isQuestionAnswered) {
+  if (countdown > 0 && !isQuestionAnswered && !isCountdownStopped) {
     remainingTime();
   }
 }
@@ -511,6 +513,9 @@ function showMessage(message) {
 
 document.getElementById("take-stay").addEventListener("click", function () {
   closeTakeMoneyMessage();
+  if (!isCountdownStopped) {
+    resumeCountdown();
+  }
 });
 
 function closeTakeMoneyMessage() {
