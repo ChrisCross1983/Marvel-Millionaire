@@ -33,6 +33,11 @@ p {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
+h2 {
+  margin: 0;
+  font-size: large;
+}
+
 h3 {
   margin: 0;
 }
@@ -40,6 +45,7 @@ h3 {
 img {
   width: 500px;
   height: 500px;
+  object-fit: cover;
 }
 
 .game-wrapper,
@@ -91,7 +97,7 @@ button:hover {
 }
 
 .btn-gold {
-  background-color: #d2ac47;
+  background-color: #8B6527;
   min-width: 75px;
 }
 
@@ -391,7 +397,7 @@ a:visited {
   margin: 0 auto;
   max-width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 #congrats-message {

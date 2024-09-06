@@ -14,10 +14,10 @@ function closeModusBox() {
 
 function startGame(mode) {
   if (mode === "normal") {
-    alert("Starting Normal Version with 4 Jokers!");
+    alert("Starting Normal Mode with 120 Seconds timer for each question!");
     sessionStorage.setItem("gameMode", "normal");
   } else if (mode === "hard") {
-    alert("Starting Hard Version with 3 Jokers!");
+    alert("Starting Hard Mode with 60 Seconds timer for each question!");
     sessionStorage.setItem("gameMode", "hard");
   }
   closeModusBox();

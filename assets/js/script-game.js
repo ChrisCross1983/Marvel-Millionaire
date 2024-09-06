@@ -78,7 +78,7 @@ function showQuestion(index) {
   const deselect = document.querySelectorAll('input[name="answers"]');
   deselect.forEach((radio) => (radio.checked = false));
 
-  const questionHeader = document.querySelector("#question-box h3");
+  const questionHeader = document.querySelector("#question-box h2");
 
   if (index < questions.length && index >= 0) {
     questionHeader.textContent = questions[index].question;
@@ -151,7 +151,7 @@ function correctAnswer() {
       isQuestionAnswered = true;
       disableJokers();
     } else {
-      const currentScore = scoreMoney[currentScoreIndex];
+      
       wrongAnswerMessage();
       resetGame();
       return;

@@ -2,7 +2,7 @@
 
 Welcome to “Marvel Millionaire”, an exciting quiz game inspired by the popular show “Who Wants to Be a Millionaire”. Test your knowledge of the Marvel universe as you answer increasingly challenging questions to climb the prize ladder. Equipped with different jokers and a ticking timer, you must prove that you are the ultimate Marvel fan!
 
-![Responsive Mockup](readme-img\mockup.png)
+![Responsive Mockup](/readme-img/mockup.png)
 
 The live link for Marvel Millionaire can be found here: ["Welcome to Marvel Millionaire!"](https://chriscross1983.github.io/pp2/)
 
@@ -53,9 +53,20 @@ The game uses a clean sans-serif font to ensure readability on all devices. Head
 
 ## Wireframes
 
-<details> <summary>See Wireframes</summary>
-Screenshots
+The design and structure for this website was created with balsamiq. The designs produced were low fidelity wireframes for desktop, tablet and mobile version. The final designs and structure differ from the wireframes due to developments during the construction of the website.
+
+<details> <summary>Low Fidelity Wireframes</summary>
+
+![Screenshot Wireframe Homepage Desktop](/readme-img/wireframe_home_desktop.png)
+![Screenshot Mobile Homepage Mobile](/readme-img/wireframe_home_mobile.png)
+![Screenshot Wireframe Gamepage Desktop](/readme-img/wireframe_game_desktop.png)
+![Screenshot Wireframe Gamepage Mobile](/readme-img/wireframe_game_mobile.png)
+
 </details>
+
+## Site Structure
+
+
 
 # Features
 
@@ -84,26 +95,28 @@ Marvel Millionaire offers an exciting quiz experience, challenging players with 
 
 ## Navigation
 
+The Landing Page offers intuitive navigation with a prominent header linking back to the home page, allowing users to easily return. It features two main navigation options: Play and Rules, each displayed in interactive flip-boxes. The front side shows an image, while the back provides a detailed description of the feature. Players can either start the game or review the rules, ensuring they are familiar with the gameplay mechanics before beginning their journey in Marvel Millionaire.
 
+![Screenshot Navigation Bar](/readme-img/Navigation_bar.png)
 
-<details> <summary>See Gameplay Screenshots</summary>
+<details> <summary>See more Screenshots</summary>
 
 ![Screenshot Navigation Desktop](/readme-img/navigation_desktop.png)
 ![Screenshot Navigation Mobile](/readme-img/navigation_mobile.png)
 
 </details>
 
-Screenshots
-
 ## Home Page
 
-Rules:
+The Home Page acts as the central hub of Marvel Millionaire and greets players with a large header, "Welcome to Marvel Millionaire." Below, players receive an introduction to the game's concept and rules. From this point, they can start the game by clicking the "Let's Play" button, choosing between Normal or Hard mode. Each mode offers different difficulty questions to cater to varying player experiences.
 
-Screenshots
+![Screenshot Homepage](/readme-img/homepage.png)
 
 ## Game Page
 
-Screenshots
+The Game Page serves as the core gameplay area where users answer Marvel-related questions in a multiple-choice format. Players can track their score, utilize one of four jokers (50:50, Hint, Freeze Timer, or Smash), and view the countdown timer for each question. After submitting an answer, feedback is provided via popups for correct, incorrect, or missed answers. Players can also choose to exit or take the current winnings. Background music enhances the immersive experience.
+
+![Screenshot Gamepage Mobile](/readme-img/gamepage.png)
 
 ## Future Features
 
@@ -118,8 +131,8 @@ Screenshots
 
 ## Languages Used
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
 ## Frameworks, Libraries & Programs Used
@@ -168,19 +181,23 @@ This is a guide on how to clone a repository from GitHub.
 
 ## Code Validation
 
-Marvel Millionaire has been validated via W3C HTML Validator and the W3C CSS Validator. There were two small error categories coming up on different on the game.html page, which are fixed and reported in the bugs section.
+Marvel Millionaire has been validated via W3C HTML Validator, W3C CSS Validator and JSHint. There were two small error categories coming up on different places, which are fixed and reported in the bugs section.
 
 W3C Code Validation - index.html:
 
-![Image W3 Code Validation](readme-img\w3c_index-html.png)
+![Image W3 Code Validation](/readme-img/w3c_index-html.png)
 
 W3C Code Validation - game.html:
 
-![Image W3 Code Validation](readme-img\w3c_game-html.png)
+![Image W3 Code Validation](/readme-img/w3c_game-html.png)
 
 W3C Code Validation - CSS:
 
-![Image of W3 CSS Code Validation](readme-img\w3c_css.png)
+![Image of W3 CSS Code Validation](/readme-img/w3c_css.png)
+
+JSHint Code Validation - JavaScript js files:
+
+![Image of JSHint Code Validation](/readme-img/jshint_validation.png)
 
 ## Responsiveness
 
@@ -190,22 +207,32 @@ Responsiveness was tested by a few different mediums manually (Apple iphone XS, 
 
 Mobile:
 
-![Index Responsive on mobile](readme-img\mobile_index.png)
-![GameResponsive on mobile](readme-img\mobile_game.png)
+![Index Responsive on mobile](/readme-img/mobile_index.png)
+![GameResponsive on mobile](/readme-img/mobile_game.png)
 
 Tablet:
 
-![Index Responsive on tablet](readme-img\tablet_index.png)
-![Game Responsive on tablet](readme-img\tablet_game.png)
+![Index Responsive on tablet](/readme-img/tablet_index.png)
+![Game Responsive on tablet](/readme-img/tablet_game.png)
 
 Laptop:
 
-![Index Responsive on Laptop](readme-img\laptop_index.png)
-![Game Responsive on Laptop](readme-img\laptop_game.png)
+![Index Responsive on Laptop](/readme-img/laptop_index.png)
+![Game Responsive on Laptop](/readme-img/laptop_game.png)
 
 </details>
 
 ## Lighthouse Testing
+
+Index Page:
+
+![Lighthouse Audit Index Page Mobile](/readme-img/index_mobile_lighthouse.png)
+![Lighthouse Audit Index Page Desktop](/readme-img/index_desktop_lighthouse.png)
+
+Game Page:
+
+![Lighthouse Audit Game Page Mobile](/readme-img/game_mobile_lighthouse.png)
+![Lighthouse Audit Game Page Desktop](/readme-img/game_desktop_lighthouse.png)
 
 ## Accessibility Testing
 
