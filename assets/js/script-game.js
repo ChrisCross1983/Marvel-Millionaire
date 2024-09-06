@@ -28,10 +28,6 @@ let currentQuestion;
 let currentQuestionIndex = 0;
 let isCountdownStopped = false;
 
-/* Background Music */
-
-document.getElementById('background-music').play();
-
 /* Loading game questions */
 
 const gameMode = sessionStorage.getItem("gameMode");
@@ -66,6 +62,8 @@ if (window.location.pathname.includes("game.html")) {
       closeReadyQuestion();
       showScore();
       showQuestion(0);
+      /* Background Music */
+      document.getElementById("background-music").play();
     });
   });
 }
@@ -115,12 +113,13 @@ document.getElementById("submit-btn").addEventListener("click", function () {
 });
 
 function correctAnswer() {
-
   if (!questions[currentQuestionIndex]) {
     return;
   }
 
-  const selectedOption = document.querySelector('input[name="answers"]:checked');
+  const selectedOption = document.querySelector(
+    'input[name="answers"]:checked'
+  );
 
   if (selectedOption) {
     const selectedAnswer = document
@@ -147,7 +146,6 @@ function correctAnswer() {
       showScore();
       isQuestionAnswered = true;
       disableJokers();
-      
     } else {
       const currentScore = scoreMoney[currentScoreIndex];
       alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
@@ -157,7 +155,12 @@ function correctAnswer() {
     pauseCountdown();
     document.getElementById("submit-btn").disabled = true;
   } else {
-    alert("Please select an answer before submitting");
+    const noAnswerPopup = document.getElementById('no-answer-selected');
+    noAnswerPopup.classList.remove('hidden');
+
+    document.getElementById('close-no-answer').addEventListener('click', function () {
+      noAnswerPopup.classList.add('hidden');
+    });
   }
 }
 
@@ -201,26 +204,26 @@ function nextAnswer() {
     answeringInProgress = false;
     return;
   }
-    resetAnswers();
-    showQuestion(currentQuestionIndex);
-    startNewCountdown();
-    isQuestionAnswered = false;
-    enableUnusedJokers();
+  resetAnswers();
+  showQuestion(currentQuestionIndex);
+  startNewCountdown();
+  isQuestionAnswered = false;
+  enableUnusedJokers();
 
-    // Reactivate disabled answers
-    let answerOptions = document.querySelectorAll('input[name="answers"]');
-    answerOptions.forEach((option) => {
-      option.disabled = false;
-    });
+  // Reactivate disabled answers
+  let answerOptions = document.querySelectorAll('input[name="answers"]');
+  answerOptions.forEach((option) => {
+    option.disabled = false;
+  });
 
-    // Restore opacity
-    let answerLabels = document.querySelectorAll(".answer-text");
-    answerLabels.forEach((label) => {
-      label.style.opacity = 1;
-      label.classList.remove("selected-answer");
-    });
+  // Restore opacity
+  let answerLabels = document.querySelectorAll(".answer-text");
+  answerLabels.forEach((label) => {
+    label.style.opacity = 1;
+    label.classList.remove("selected-answer");
+  });
 
-  answeringInProgress = false;  // Flag zurücksetzen
+  answeringInProgress = false; // Flag zurücksetzen
 }
 
 /* Joker */
@@ -360,13 +363,17 @@ function jokerHulk() {
     }
   }
 
-  let availableIncorrectAnswers = incorrectAnswers.filter(answer => {
-    let answerLabel = Array.from(document.querySelectorAll(".answer-text")).find(label => label.textContent === answer);
+  let availableIncorrectAnswers = incorrectAnswers.filter((answer) => {
+    let answerLabel = Array.from(
+      document.querySelectorAll(".answer-text")
+    ).find((label) => label.textContent === answer);
     return answerLabel && !answerLabel.previousElementSibling.disabled;
   });
 
   if (availableIncorrectAnswers.length > 0) {
-    let randomIndex = Math.floor(Math.random() * availableIncorrectAnswers.length);
+    let randomIndex = Math.floor(
+      Math.random() * availableIncorrectAnswers.length
+    );
     let randomAnswer = availableIncorrectAnswers[randomIndex];
 
     let answerLabels = document.querySelectorAll(".answer-text");
@@ -423,19 +430,18 @@ function startNewCountdown() {
 
 /* Time is over */
 
-function timeoutMessage () {
+function timeoutMessage() {
+  const popupTime = document.getElementById("timeout-message");
+  const finalScore = document.getElementById("final-score");
 
-const popupTime = document.getElementById("timeout-message");
-const finalScore = document.getElementById("final-score");
+  finalScore.textContent = scoreMoney[currentScoreIndex];
 
-finalScore.textContent = scoreMoney[currentScoreIndex];
+  popupTime.classList.remove("hidden");
 
-popupTime.classList.remove("hidden");
-
-document.getElementById("restart-btn").addEventListener('click', function() {
-  resetGame();
-  popupTime.classList.add("hidden");
-});
+  document.getElementById("restart-btn").addEventListener("click", function () {
+    resetGame();
+    popupTime.classList.add("hidden");
+  });
 }
 
 /* Score system */
@@ -508,10 +514,12 @@ function showMessage(message) {
   messageText.textContent = message;
   messageBox.classList.remove("hidden");
 
-  document.getElementById("close-message").addEventListener("click", function() {
-    messageBox.classList.add("hidden");
-    window.location.href = "index.html";
-  });
+  document
+    .getElementById("close-message")
+    .addEventListener("click", function () {
+      messageBox.classList.add("hidden");
+      window.location.href = "index.html";
+    });
 }
 
 /* No */

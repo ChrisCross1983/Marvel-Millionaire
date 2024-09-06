@@ -37,7 +37,8 @@ h3 {
   margin: 0;
 }
 
-.game-wrapper, .extras-wrapper {
+.game-wrapper,
+.extras-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
   padding: 10px;
@@ -46,7 +47,6 @@ h3 {
   max-width: 650px;
   gap: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  ;
 }
 
 .game-wrapper {
@@ -65,7 +65,7 @@ button {
   border-radius: 25px;
   padding: 8px;
   min-height: 50px;
-  min-width: 100px;
+  min-width: 90px;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
@@ -77,22 +77,22 @@ button:hover {
 
 .btn-red {
   background-color: #a71814;
-  min-width: 80px;
+  min-width: 75px;
 }
 
 .btn-green {
   background-color: #567943;
-  min-width: 80px;
+  min-width: 75px;
 }
 
 .btn-gold {
   background-color: #d2ac47;
-  min-width: 80px;
+  min-width: 75px;
 }
 
 .btn-blue {
   background-color: blue;
-  min-width: 80px;
+  min-width: 75px;
 }
 
 .button-box {
@@ -185,7 +185,9 @@ a:visited {
   box-sizing: border-box;
 }
 
-.flip-box-back p, .flip-box-back ul, .flip-box-back h2 {
+.flip-box-back p,
+.flip-box-back ul,
+.flip-box-back h2 {
   margin: 10px 0;
   padding: 5px 10px;
   line-height: 1.6;
@@ -246,7 +248,12 @@ a:visited {
   width: 100%;
 }
 
-#question-box, #answer-container, #joker-box, .button-box, #countdown-box, #score-box {
+#question-box,
+#answer-container,
+#joker-box,
+.button-box,
+#countdown-box,
+#score-box {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 10px;
@@ -351,7 +358,9 @@ a:visited {
   gap: 20px;
 }
 
-#timer, #a-score, #n-score {
+#timer,
+#a-score,
+#n-score {
   border: 1px solid white;
   border-radius: 25px;
   background-color: black;
@@ -427,8 +436,8 @@ a:visited {
 /* Smash Effect */
 
 .smash {
-    animation: shake 0.5s ease, fadeOut 0.8s forwards;
-    position: relative;
+  animation: shake 0.5s ease, fadeOut 0.8s forwards;
+  position: relative;
 }
 
 @keyframes shake {
@@ -450,8 +459,12 @@ a:visited {
 }
 
 @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Media Queries for larger screens */
@@ -500,14 +513,16 @@ a:visited {
     top: 100px;
   }
 
-  .flip-box-front, .flip-box-back {
+  .flip-box-front,
+  .flip-box-back {
     max-width: 100%;
     max-height: 100%;
   }
 }
 
 @media (min-width: 650px) {
-  .flip-box-front, .flip-box-back {
+  .flip-box-front,
+  .flip-box-back {
     min-width: 100%;
   }
 }
@@ -532,7 +547,7 @@ a:visited {
   .button-box {
     gap: 60px;
     padding: 10px 0;
-   }
+  }
 
   button {
     font-size: 17px;
@@ -547,7 +562,8 @@ a:visited {
     min-height: 450px;
   }
 
-  .flip-box-front, .flip-box-back {
+  .flip-box-front,
+  .flip-box-back {
     width: 50%;
     max-width: 100%;
     max-height: 100%;
@@ -566,6 +582,10 @@ a:visited {
   #rules {
     max-width: 90%;
     max-height: 90%;
+  }
+
+  #joker-thanos {
+    max-width: 90px;
   }
 
   .joker-icon img {
@@ -600,12 +620,13 @@ a:visited {
     font-size: 0.8em;
   }
 
- .flip-box {
+  .flip-box {
     max-width: 300px;
     max-height: 400px;
   }
 
-  .flip-box-front, .flip-box-back {
+  .flip-box-front,
+  .flip-box-back {
     max-width: 100%;
     max-height: 100%;
   }
@@ -620,7 +641,8 @@ a:visited {
     max-height: 100%;
   }
 
-  .flip-box-front, .flip-box-back {
+  .flip-box-front,
+  .flip-box-back {
     max-width: 100%;
     max-height: 100%;
   }
@@ -636,7 +658,8 @@ a:visited {
     max-width: 40px;
   }
 
-  #a-score, #n-score {
+  #a-score,
+  #n-score {
     font-size: 0.8em;
   }
 
@@ -664,14 +687,14 @@ a:visited {
 
   #joker-box {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 5px;
     flex-wrap: wrap;
   }
 
   .joker-icon img {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
   }
 
   .img_text {
