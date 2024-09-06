@@ -525,6 +525,12 @@ a:visited {
     max-width: 150px;
     padding: 10px;
   }
+
+  #play,
+  #rules {
+    max-width: 300px;
+    max-height: 450px;
+  }
 }
 
 /* Media Queries for larg Smartphone screens */
@@ -566,6 +572,11 @@ a:visited {
   button {
     max-width: 150px;
     font-size: 0.8em;
+  }
+
+ .flip-box {
+    max-width: 300px;
+    max-height: 450px;
   }
 }
 
@@ -641,7 +652,7 @@ a:visited {
   }
 
   .flip-box {
-    width: 200px;
+    max-width: 300px;
     height: 350px;
   }
 }
