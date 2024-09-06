@@ -10,7 +10,7 @@ The live link for Marvel Millionaire can be found here: ["Welcome to Marvel Mill
 
 | Name            | Linkedin                                                                    | GitHub |
 | --------------- | --------------------------------------------------------------------------- | ------ |
-| Christian Borza | [Link to his Linkedin Profile](https://www.linkedin.com/in/borzachristian/) | [Link to his GitHub Profile] https://github.com/ChrisCross1983
+| Christian Borza | [Link to his Linkedin Profile](https://www.linkedin.com/in/borzachristian/) | [Link to his GitHub Profile](https://github.com/ChrisCross1983)
 
 # Objectives
 
@@ -59,11 +59,14 @@ Screenshots
 
 # Features
 
-Marvel Millionaire offers a range of features that make the game engaging and enjoyable:
-
 ## Gameplay
 
-- **Question Rounds**:
+Marvel Millionaire offers an exciting quiz experience, challenging players with superhero-themed questions and strategic lifelines. Use jokers like Thanos' 50:50, Rocket's hint, Thor's timer pause, or Hulk's smash to navigate through tricky questions. Players earn increasing rewards in the style of the classic "Millionaire" game, tracking their progress with a dynamic score system. To heighten the thrill, each question is against the clock, ensuring a fast-paced and engaging experience.
+
+- **Game Mode**: The game features two modes: 
+  - **Normal Mode**: In Normal Mode, players have 120 seconds to answer each question, 
+  - **Hard Mode**: In Hard Mode, the time is reduced to 60 seconds to increase difficulty. Additionally, the questions in Hard Mode are more challenging, making it ideal for seasoned players looking for a tougher test of their knowledge.
+- **Question Rounds**: The game consists of 14 question rounds, each progressively more challeging.
 - **Jokers** - Use lifelines like to assist with challenging questions:
   - **Thanos'** 50:50 (erases two incorrect answers)
   - **Rocket's** hint (gives a hint to the user)
@@ -80,6 +83,15 @@ Marvel Millionaire offers a range of features that make the game engaging and en
 </details>
 
 ## Navigation
+
+
+
+<details> <summary>See Gameplay Screenshots</summary>
+
+![Screenshot Navigation Desktop](/readme-img/navigation_desktop.png)
+![Screenshot Navigation Mobile](/readme-img/navigation_mobile.png)
+
+</details>
 
 Screenshots
 

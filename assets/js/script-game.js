@@ -23,7 +23,7 @@ const scoreMoney = [
 let questions = [];
 let isQuestionAnswered = false;
 let timer;
-let countdown = 120;
+let countdown = null;
 let currentQuestion;
 let currentQuestionIndex = 0;
 let isCountdownStopped = false;
@@ -34,8 +34,10 @@ const gameMode = sessionStorage.getItem("gameMode");
 
 if (gameMode === "hard") {
   questions = hardQuestions;
+  countdown = 60;
 } else {
   questions = normalQuestions;
+  countdown = 120;
 }
 
 /* Question functionality */
@@ -422,7 +424,6 @@ function resumeCountdown() {
 
 function startNewCountdown() {
   clearInterval(timer);
-  countdown = 120;
   remainingTime();
 }
 
