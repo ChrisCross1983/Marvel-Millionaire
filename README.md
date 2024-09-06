@@ -8,9 +8,9 @@ The live link for Marvel Millionaire can be found here: ["Welcome to Marvel Mill
 
 ## Software Developer
 
-| Name            | Linkedin                                                                    | GitHub |
-| --------------- | --------------------------------------------------------------------------- | ------ |
-| Christian Borza | [Link to his Linkedin Profile](https://www.linkedin.com/in/borzachristian/) | [Link to his GitHub Profile](https://github.com/ChrisCross1983)
+| Name            | Linkedin                                                                    | GitHub                                                          |
+| --------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Christian Borza | [Link to his Linkedin Profile](https://www.linkedin.com/in/borzachristian/) | [Link to his GitHub Profile](https://github.com/ChrisCross1983) |
 
 # Objectives
 
@@ -66,7 +66,7 @@ The design and structure for this website was created with balsamiq. The designs
 
 ## Site Structure
 
-
+The Marvel Millionaire website consists of two main pages: the Landing Page or [Home Page](index.html) and the [Game Page](game.html). The Landing Page introduces users to the game, with links to either start playing or view the rules. The Game Page hosts the actual quiz, where users answer questions and use jokers to progress. Both pages have a simple, intuitive design. A navigation link in the header allows users to return to the Home Page. For smaller screens, a responsive design ensures optimal usability.
 
 # Features
 
@@ -74,8 +74,8 @@ The design and structure for this website was created with balsamiq. The designs
 
 Marvel Millionaire offers an exciting quiz experience, challenging players with superhero-themed questions and strategic lifelines. Use jokers like Thanos' 50:50, Rocket's hint, Thor's timer pause, or Hulk's smash to navigate through tricky questions. Players earn increasing rewards in the style of the classic "Millionaire" game, tracking their progress with a dynamic score system. To heighten the thrill, each question is against the clock, ensuring a fast-paced and engaging experience.
 
-- **Game Mode**: The game features two modes: 
-  - **Normal Mode**: In Normal Mode, players have 120 seconds to answer each question, 
+- **Game Mode**: The game features two modes:
+  - **Normal Mode**: In Normal Mode, players have 120 seconds to answer each question,
   - **Hard Mode**: In Hard Mode, the time is reduced to 60 seconds to increase difficulty. Additionally, the questions in Hard Mode are more challenging, making it ideal for seasoned players looking for a tougher test of their knowledge.
 - **Question Rounds**: The game consists of 14 question rounds, each progressively more challeging.
 - **Jokers** - Use lifelines like to assist with challenging questions:
@@ -140,7 +140,7 @@ The Game Page serves as the core gameplay area where users answer Marvel-related
 - For debugging and perfomance optimization [Chrome DevTools](https://developer.chrome.com/docs/devtools)
 - Interface for transfer and pushing the code to GitHub using [GitHub Desktop](https://desktop.github.com/download/)
 - Local coding environment and developing with [VS Code](https://code.visualstudio.com/)
-- Drafts were drawn with help of [balsamiq](https://balsamiq.com) 
+- Drafts were drawn with help of [balsamiq](https://balsamiq.com)
 - Created a repository and deployed the live project with [GitHub](https://github.com/)
 - Inspiration and help to create readable text with [ChatGPT](https://chatgpt.com/)
 
@@ -181,7 +181,7 @@ This is a guide on how to clone a repository from GitHub.
 
 ## Code Validation
 
-Marvel Millionaire has been validated via W3C HTML Validator, W3C CSS Validator and JSHint. There were two small error categories coming up on different places, which are fixed and reported in the bugs section.
+Marvel Millionaire has been validated via W3C HTML Validator, W3C CSS Validator and JSHint. There were several small errors coming up on different places, which were immediately fixed and reported in the bugs section.
 
 W3C Code Validation - index.html:
 
@@ -224,6 +224,8 @@ Laptop:
 
 ## Lighthouse Testing
 
+The website was also put through Lighthouse testing via Chrome Devtools which tests a site under 4 different headings: Performance, Accessibility, Best Practices and SEO and it tests it under mobile and desktop criteria.
+
 Index Page:
 
 ![Lighthouse Audit Index Page Mobile](/readme-img/index_mobile_lighthouse.png)
@@ -236,17 +238,73 @@ Game Page:
 
 ## Accessibility Testing
 
-## Manuel Testing / Testing User Stories / (Automated Testing)
+## Manuel Testing
+
+## Navigation Menu
+
+- Verified that the logo links back to the Home Page when clicked.
+- Confirmed consistent hover effects across all buttons.
+- Verified that the navigation is fully responsive.
+
+## Home Page
+
+- Confirmed that the hero image is optimized and fully responsive.
+- Verified the flip effect on the "Play" and "Rules" sections works smoothly.
+- Verified all images have appropriate alt text and are optimized.
+- Ensured that all elements on the Home Page are fully responsive.
+- Verified that the link to start the game works properly and redirects to the gamepage.
+
+## Game Page
+
+- **Gameplay Testing**:
+- Verified the initial Ready-Question is loading before game start.
+- Verified the proper loading of questions.
+- Ensured the 50:50 Joker removes two incorrect answers.
+- Confirmed Rocket's hint message appers, Thor's freeze stops the timer, and Hulk's smash functionality delets one incorrect answer.
+- Confirmed the timer functions as expected with a reset for each question.
+- Verified correct answer submission and score updating.
+- Verified the correct functionality of the "Take Money" and "Exit" buttons.
+- Ensured the full countdown, win/lose popups, and score tracking are working.
+- Confirmed correct functionality of question selection and joker options.
+- Ensured countdown timer functions properly after using several interupting buttons.
+- Verified that all game elements are optimized and responsive.
+
+## Browser Testing
+
+- Manually tested Marvel Millionaire on Google Chrome, Microsoft Edge, and Mozilla Firefox on both desktop and mobile.
+- Verified that all images load correctly and consistently across browsers.
+- Confirmed full responsiveness across all browsers and screen sizes.
+- Verified the game play work and the functionality is fluent.
 
 # Bugs
 
 ## Solved Bugs:
-  - Div Section inside an h element
-  - Formating problems due to an unnecessary backslash (...... / >) set by the VS Code extension "Prettier"
-  - Timer counts over 0 into minus area
 
-## Knows Bugs : What the bug is and why you decided to leave it.
-## Unfixed Bugs
+### Structural Issues:
+- Unnecessary `<div>` section inside an `<h>` element.
+- Formatting issues due to an unnecessary backslash (`/ >`) added by the Prettier extension.
+
+### Timer-Related Bugs:
+- Timer counts into negative values.
+- Timer fails to start when a new question appears.
+- Timer resets incorrectly after clicking the "Exit" or "Take Money" button.
+- Timer display does not update after using Thor's freeze joker.
+
+### Joker-Related Bugs:
+- Thanos 50:50 joker disables already removed answers from Hulk's smash.
+- Thanos joker can be used multiple times in a single round.
+- Hulk's smash removes an already disabled answer.
+- Jokers reappear in the next round despite being used.
+- Not all jokers can be used in a single round.
+- After submitting an answer, it's still possible to use a joker.
+- Hidden answers from used jokers remain hidden in the next round.
+
+### Game Logic Bugs:
+- Incorrect answers still appear after restarting the game.
+- Selected answer effects carry over to the next round.
+- Game crashes after the 5th question due to incorrect `currentQuestionIndex` handling.
+- Actual score shows the reward for the next question, not the current one.
+- After submitting an answer, it remains possible to select another.
 
 # Credits
 
@@ -264,15 +322,15 @@ Game Page:
 - How to add background music - https://stackoverflow.com/questions/6529645/how-to-add-background-music-to-a-web-page
 - How to add canvas effects - https://www.w3schools.com/html/html5_canvas.asp
 
-
 ## Media
 
-- Hero Background - wallpapers.com
-- Favicon Title - realfavicongenerator.net
+- Hero Background - [Link to website](https://wallpapers.com)
+- Favicon Title - [Link to website](https://realfavicongenerator.net)
 - Font Awesome for different icons [Font Awesome](https://fontawesome.com/icons)
-
-- Joker Images - freepik.com, wallpapers.com and wallpapercave.com
+- Joker Images - [Link to website](https://freepik.com), (https://wallpapers.com), (https://wallpapercave.com)
 - Background Music - [Link to website](https://pixabay.com/sound-effects/search/music/)
-- Sound Effects - https://freesound.org/
+- Sound Effects - [Link to website](https://freesound.org/)
 
 ## Acknowledgements
+
+Big thanks to my mentor, the slack community, Code Insititue Tutors and my Cohort Faciliator Kay and classmate Dominik for supporting me through this project.

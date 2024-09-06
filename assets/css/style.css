@@ -209,7 +209,7 @@ a:visited {
 }
 
 .flip-box-back button {
-  margin-top: 20px;
+  margin-top: 5px;
   min-width: 100px;
 }
 
@@ -729,6 +729,6 @@ a:visited {
 
   .flip-box {
     max-width: 300px;
-    height: 350px;
+    height: 400px;
   }
 }
