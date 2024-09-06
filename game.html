@@ -92,7 +92,7 @@
           <img src="assets/images/rocket.webp" alt="Shows joker as Rocket"><span class="img_text_small">Hint</span>
         </button>
         <button class="joker-icon" id="joker-thor">
-          <img src="assets/images/thor.webp" alt="Shows joker as Thor"><span class="img_text_small">Thunder</span>
+          <img src="assets/images/thor.webp" alt="Shows joker as Thor"><span class="img_text_small">Freeze</span>
         </button>
         <button class="joker-icon" id="joker-hulk">
           <img src="assets/images/hulk.webp" alt="Shows joker as Hulk"><span class="img_text_small">Smash</span>
@@ -123,7 +123,7 @@
 
     <div id="success-popup" class="modus hidden">
       <div class="hidden-content">
-        <p id="success-message">Message</p>
+        <h3 id="success-message">Message</h3>
         <button id="btn-next" class="btn btn-green">Next Question</button>
       </div>
     </div>
@@ -154,7 +154,7 @@
 
     <div id="exit-select" class="modus hidden">
       <div class="hidden-content">
-        <h3>Are you sure that you want to quit?</h3>
+        <h3>What's wrong Buddy? Why you want to quit the game?</h3>
         <button id="quit" class="btn btn-green">Yes</button>
         <button id="stay" class="btn btn-red">No</button>
       </div>
@@ -164,7 +164,7 @@
 
     <div id="take-select" class="modus hidden">
       <div class="hidden-content">
-        <h3>Are you sure that you want to quit and take the money?</h3>
+        <h3>Are you kidding me? You really want to quit and take the money?</h3>
         <button id="take-leave" class="btn btn-green">Yes</button>
         <button id="take-stay" class="btn btn-red">No</button>
       </div>
@@ -183,20 +183,21 @@
 
     <div id="timeout-message" class="modus hidden">
       <div class="hidden-content">
-        <h3>Time's Up!</h3>
-        <p>Unfortunately, the time is over. You have won <span id="final-score">0K</span>!</p>
+        <h3>Oh no, Time's Up!</h3>
+        <p>Unfortunately, the time is over. You have reached <span id="final-score">0K</span>!</p>
         <button id="restart-btn" class="btn btn-green">Restart Game</button>
       </div>
     </div>
 
-    <!-- Congrat to 1M Message
+    <!-- Wrong answer message -->
 
-    <div id="congrats-message" class="modus hidden">
-      <img src="" alt="Avenger">
-        <h2>Congratulations!</h2>
-        <p>You won 1 million!</p>
-        <button id="restart-btn" class="btn btn-green">Restart Game</button>
-    </div> -->
+    <div id="wrong-message" class="modus hidden">
+      <div class="hidden-content">
+        <h3>I'm sorry Dude, that was wrong!</h3>
+        <p>You have reached <span id="end-score">0K</span>!</p>
+        <button id="resume-btn" class="btn btn-green">Let's try again!</button>
+      </div>
+    </div>
 
     <!-- Background Music -->
 

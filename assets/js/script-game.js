@@ -47,7 +47,7 @@ function showReadyQuestion() {
   const ready = document.getElementById("ready-question");
   const readyText = document.querySelector("#ready-question p");
 
-  readyText.innerHTML = `Prepare for your first question and<br/> remember to keep an eye on the countdown!`;
+  readyText.innerHTML = `Prepare for your first question and remember to keep an eye on the countdown!`;
   ready.classList.remove("hidden");
 }
 
@@ -79,11 +79,14 @@ function showQuestion(index) {
   deselect.forEach((radio) => (radio.checked = false));
 
   const questionHeader = document.querySelector("#question-box h3");
+
   if (index < questions.length && index >= 0) {
     questionHeader.textContent = questions[index].question;
     currentQuestion = questions[index];
+    countdown = gameMode === "hard" ? 60 : 120;
     showAnswers(index);
   } else {
+
   }
 }
 
@@ -143,13 +146,13 @@ function correctAnswer() {
       increaseScore();
       currentQuestionIndex++;
       const nextScore = scoreMoney[currentScoreIndex] || "1M";
-      showSuccessPopup(`You're right buddy! You reached ${nextScore}`);
+      showSuccessPopup(`You're right Buddy! You reached ${nextScore}`);
       showScore();
       isQuestionAnswered = true;
       disableJokers();
     } else {
       const currentScore = scoreMoney[currentScoreIndex];
-      alert(`Sorry buddy, you're wrong! You have won ${currentScore}`);
+      wrongAnswerMessage();
       resetGame();
       return;
     }
@@ -440,6 +443,22 @@ function timeoutMessage() {
   document.getElementById("restart-btn").addEventListener("click", function () {
     resetGame();
     popupTime.classList.add("hidden");
+  });
+}
+
+/* Wrong answer message */
+
+function wrongAnswerMessage() {
+  const popupWrongAnswer = document.getElementById("wrong-message");
+  const finalScore = document.getElementById("end-score");
+
+  finalScore.textContent = scoreMoney[currentScoreIndex];
+
+  popupWrongAnswer.classList.remove("hidden");
+
+  document.getElementById("resume-btn").addEventListener("click", function () {
+    resetGame();
+    popupWrongAnswer.classList.add("hidden");
   });
 }
 
