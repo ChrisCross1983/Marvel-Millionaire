@@ -28,6 +28,10 @@ let currentQuestion;
 let currentQuestionIndex = 0;
 let isCountdownStopped = false;
 
+/* Background Music */
+
+document.getElementById('background-music').play();
+
 /* Loading game questions */
 
 const gameMode = sessionStorage.getItem("gameMode");
@@ -37,8 +41,6 @@ if (gameMode === "hard") {
 } else {
   questions = normalQuestions;
 }
-
-console.log('Loaded questions:', questions);
 
 /* Question functionality */
 /* Ask initial question if player is ready */
@@ -103,8 +105,6 @@ function showAnswers(index) {
       answerLabels[i].textContent = questions[index].options[i];
     }
     startNewCountdown();
-  } else {
-    console.log("Invalid question index.");
   }
 }
 
@@ -117,8 +117,7 @@ document.getElementById("submit-btn").addEventListener("click", function () {
 function correctAnswer() {
 
   if (!questions[currentQuestionIndex]) {
-    console.error("Question is not defined.");
-    return; // Ends the function, if the question is undefined
+    return;
   }
 
   const selectedOption = document.querySelector('input[name="answers"]:checked');
@@ -145,7 +144,6 @@ function correctAnswer() {
       currentQuestionIndex++;
       const nextScore = scoreMoney[currentScoreIndex] || "1M";
       showSuccessPopup(`You're right buddy! You reached ${nextScore}`);
-      console.log("Actual Score after increasing: ", currentScoreIndex);
       showScore();
       isQuestionAnswered = true;
       disableJokers();
@@ -192,20 +190,15 @@ answerOptions.forEach((option) => {
 
 /* next question & answer */
 
-let answeringInProgress = false;  // Neues Flag
+let answeringInProgress = false;
 
 function nextAnswer() {
-  if (answeringInProgress) return;  // Wenn bereits im Gange, nichts tun
-  answeringInProgress = true;        // Flag setzen
-
-  console.log("Call of nextAnswer at Index: ", currentQuestionIndex);
+  if (answeringInProgress) return;
+  answeringInProgress = true;
 
   if (currentQuestionIndex >= questions.length) {
-    console.error('No more questions available.');
-    alert("You've completed the Quiz!");
-
     resetGame();
-    answeringInProgress = false; // Flag zurücksetzen, bevor die Funktion endet
+    answeringInProgress = false;
     return;
   }
     resetAnswers();
@@ -213,10 +206,6 @@ function nextAnswer() {
     startNewCountdown();
     isQuestionAnswered = false;
     enableUnusedJokers();
-
-     // Debug-Log für Index-Überprüfung
-     console.log("Next Question, Index after increasing: ", currentQuestionIndex);
-     console.log("Actual Sore, Index after nextAnswer: ", currentScoreIndex);
 
     // Reactivate disabled answers
     let answerOptions = document.querySelectorAll('input[name="answers"]');
@@ -322,9 +311,8 @@ document.getElementById("joker-rocket").addEventListener("click", jokerRocket);
 function jokerRocket() {
   if (rocketJokerUsed) return;
 
-  if (currentQuestionIndex >= questions.length) { // Überprüfe, ob die Frage existiert
-    console.error('Invalid question index:', currentQuestionIndex);
-    return; // Verhindert den weiteren Ablauf der Funktion
+  if (currentQuestionIndex >= questions.length) {
+    return;
   }
   const collectHints = questions[currentQuestionIndex].hint;
 
@@ -406,7 +394,7 @@ function remainingTime() {
 
     if (countdown <= 0) {
       clearInterval(timer);
-      console.log("Countdown finished");
+      timeoutMessage();
     }
   }, 1000);
 }
@@ -431,6 +419,23 @@ function startNewCountdown() {
   clearInterval(timer);
   countdown = 120;
   remainingTime();
+}
+
+/* Time is over */
+
+function timeoutMessage () {
+
+const popupTime = document.getElementById("timeout-message");
+const finalScore = document.getElementById("final-score");
+
+finalScore.textContent = scoreMoney[currentScoreIndex];
+
+popupTime.classList.remove("hidden");
+
+document.getElementById("restart-btn").addEventListener('click', function() {
+  resetGame();
+  popupTime.classList.add("hidden");
+});
 }
 
 /* Score system */

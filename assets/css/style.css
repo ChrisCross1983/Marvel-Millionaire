@@ -77,18 +77,22 @@ button:hover {
 
 .btn-red {
   background-color: #a71814;
+  min-width: 80px;
 }
 
 .btn-green {
   background-color: #567943;
+  min-width: 80px;
 }
 
 .btn-gold {
   background-color: #d2ac47;
+  min-width: 80px;
 }
 
 .btn-blue {
   background-color: blue;
+  min-width: 80px;
 }
 
 .button-box {
@@ -390,7 +394,7 @@ a:visited {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 1);
   z-index: 999;
 }
 

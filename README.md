@@ -219,6 +219,7 @@ Laptop:
 - How to create random values - https://www.w3schools.com/js/js_random.asp
 - How to use trim method - https://www.w3schools.com/jsref/jsref_trim_string.asp
 - How to create shake effect - https://www.w3schools.com/howto/howto_css_shake_image.asp
+- How to add background music - https://stackoverflow.com/questions/6529645/how-to-add-background-music-to-a-web-page
 
 ## Media
 
