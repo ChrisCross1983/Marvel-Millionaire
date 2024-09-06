@@ -82,7 +82,6 @@ function showQuestion(index) {
     currentQuestion = questions[index];
     showAnswers(index);
   } else {
-    alert("No more Questions!");
   }
 }
 
@@ -155,16 +154,18 @@ function correctAnswer() {
     pauseCountdown();
     document.getElementById("submit-btn").disabled = true;
   } else {
-    const noAnswerPopup = document.getElementById('no-answer-selected');
-    noAnswerPopup.classList.remove('hidden');
+    const noAnswerPopup = document.getElementById("no-answer-selected");
+    noAnswerPopup.classList.remove("hidden");
 
-    document.getElementById('close-no-answer').addEventListener('click', function () {
-      noAnswerPopup.classList.add('hidden');
-    });
+    document
+      .getElementById("close-no-answer")
+      .addEventListener("click", function () {
+        noAnswerPopup.classList.add("hidden");
+      });
   }
 }
 
-/* Success Popup */
+/* Success correct answer Popup */
 
 function showSuccessPopup(message) {
   const successPopup = document.getElementById("success-popup");
@@ -585,3 +586,15 @@ function resetGame() {
   enableUnusedJokers();
   showReadyQuestion();
 }
+
+/* Won game congrats message
+
+function showEndGameMessage() {
+  const congratsMessage = document.getElementById("congrats-message");
+  congratsMessage.classList.remove("hidden");
+
+  document.getElementById("restart-btn").addEventListener("click", function () {
+    congratsMessage.classList.add("hidden");
+    resetGame();
+  });
+}*/

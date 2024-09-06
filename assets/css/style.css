@@ -37,6 +37,11 @@ h3 {
   margin: 0;
 }
 
+img {
+  width: 500px;
+  height: 500px;
+}
+
 .game-wrapper,
 .extras-wrapper {
   background-color: rgba(0, 0, 0, 0.8);
@@ -387,6 +392,15 @@ a:visited {
   max-width: 100%;
   display: flex;
   justify-content: center;
+}
+
+#congrats-message {
+  display: flex;
+  flex-direction: column;
+}
+
+#score-box {
+  margin-bottom: 10px;
 }
 
 /* Javascript Styling */

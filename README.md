@@ -74,6 +74,9 @@ Marvel Millionaire offers a range of features that make the game engaging and en
 
 <details> <summary>See Gameplay Screenshots</summary>
 
+![Screenshot Gameplay Desktop](/readme-img/gameplay_desktop.png)
+![Screenshot Gameplay Mobile](/readme-img/gameplay_mobile.png)
+
 </details>
 
 ## Navigation
@@ -220,6 +223,8 @@ Laptop:
 - How to use trim method - https://www.w3schools.com/jsref/jsref_trim_string.asp
 - How to create shake effect - https://www.w3schools.com/howto/howto_css_shake_image.asp
 - How to add background music - https://stackoverflow.com/questions/6529645/how-to-add-background-music-to-a-web-page
+- How to add canvas effects - https://www.w3schools.com/html/html5_canvas.asp
+
 
 ## Media
 
