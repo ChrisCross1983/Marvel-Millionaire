@@ -272,34 +272,31 @@ function jokerThanos() {
   let incorrectAnswers = [];
   let correctAnswer = currentQuestion.correct;
 
-  for (let i = 0; i < currentQuestion.options.length; i++) {
-    if (currentQuestion.options[i] !== correctAnswer) {
-      incorrectAnswers.push(currentQuestion.options[i]);
-    }
-  }
-
-  /* Collect two random answers */
-
-  let randomIndex1 = Math.floor(Math.random() * incorrectAnswers.length);
-  let randomAnswer1 = incorrectAnswers[randomIndex1];
-
-  incorrectAnswers.splice(randomIndex1, 1);
-
-  let randomIndex2 = Math.floor(Math.random() * incorrectAnswers.length);
-  let randomAnswer2 = incorrectAnswers[randomIndex2];
-
-  /* Disable the random answers */
-
-  let answerLabels = document.querySelectorAll(".answer-text");
-  answerLabels.forEach((label) => {
+  document.querySelectorAll(".answer-text").forEach((label) => {
     if (
-      label.textContent === randomAnswer1 ||
-      label.textContent === randomAnswer2
+      label.textContent !== correctAnswer &&
+      !label.previousElementSibling.disabled
     ) {
-      label.previousElementSibling.disabled = true;
-      label.style.opacity = 0.5;
+      incorrectAnswers.push(label);
     }
   });
+
+  /* Collect two random answers */
+  if (incorrectAnswers.length > 1) {
+    let randomIndex1 = Math.floor(Math.random() * incorrectAnswers.length);
+    let randomAnswer1 = incorrectAnswers.splice(randomIndex1, 1)[0];
+
+    let randomIndex2 = Math.floor(Math.random() * incorrectAnswers.length);
+    let randomAnswer2 = incorrectAnswers[randomIndex2];
+
+    /* Disable the random answers */
+
+    randomAnswer1.previousElementSibling.disabled = true;
+    randomAnswer1.style.opacity = 0.5;
+
+    randomAnswer2.previousElementSibling.disabled = true;
+    randomAnswer2.style.opacity = 0.5;
+  }
 
   document.getElementById("joker-thanos").disabled = true;
   document.getElementById("joker-thanos").classList.add("joker-used");
