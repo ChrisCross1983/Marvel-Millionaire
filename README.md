@@ -1,6 +1,6 @@
 # Marvel Millionaire - Project Portfolio 2 - HTML, CSS, JavaScript
 
-Welcome to “Marvel Millionaire”, an exciting quiz game inspired by the popular show “Who Wants to Be a Millionaire”. Test your knowledge of the Marvel universe as you answer increasingly challenging questions to climb the prize ladder. Equipped with different jokers and a ticking timer, you must prove that you are the ultimate Marvel fan!
+Welcome to “Marvel Millionaire”, an exciting quiz game inspired by the popular show “Who Wants to Be a Millionaire”. Challenge your knowledge of the Marvel universe as you answer increasingly challenging questions to climb the prize ladder. Equipped with different jokers and a ticking timer, you must prove that you are the ultimate Marvel fan!
 
 ![Responsive Mockup](/readme-img/mockup.png)
 
@@ -23,7 +23,7 @@ The live link for Marvel Millionaire can be found here: ["Welcome to Marvel Mill
 
 ## Target Audience
 
-This game is designed for Marvel fans who enjoy trivia and are looking for a fun and interactive way to test their knowledge. It's perfect for both casual players who want a quick challenge and die-hard fans who aim to prove their expertise.
+This game targets Marvel fans who enjoy trivia and seek a fun, interactive way to test their expertise. It's perfect for both casual players who want a quick challenge and die-hard fans who aim to prove their expertise.
 
 ### User Stories
 
@@ -43,9 +43,9 @@ This game is designed for Marvel fans who enjoy trivia and are looking for a fun
 
 ## Color Scheme
 
-The game uses a dark color scheme to create a dramatic and immersive Marvel universe experience. The primary colors are deep blues, blacks, and grays with highlights in red and gold to signify progress and success. This color palette ensures that text and buttons are easily visible against the game's dynamic background.
+Marvel Millionaire follows a dark, cinematic theme, reflecting the Marvel universe's dramatic and bold atmosphere. The background uses deep blacks and blues, while text is styled in white with a shadow effect for clear visibility. The buttons feature distinct colors representing the Marvel heroes' traits—red for danger, green for growth, gold for achievement, and blue for stability. This contrast creates a strong, immersive user experience.
 
-Screenshot
+![Color Schme](/readme-img/color_scheme.png)
 
 ## Typography
 
@@ -77,7 +77,7 @@ Marvel Millionaire offers an exciting quiz experience, challenging players with 
 - **Game Mode**: The game features two modes:
   - **Normal Mode**: In Normal Mode, players have 120 seconds to answer each question,
   - **Hard Mode**: In Hard Mode, the time is reduced to 60 seconds to increase difficulty. Additionally, the questions in Hard Mode are more challenging, making it ideal for seasoned players looking for a tougher test of their knowledge.
-- **Question Rounds**: The game consists of 14 question rounds, each progressively more challeging.
+- **Question Rounds**: The game consists of 14 question rounds, each progressively more challenging.
 - **Jokers** - Use lifelines like to assist with challenging questions:
   - **Thanos'** 50:50 (erases two incorrect answers)
   - **Rocket's** hint (gives a hint to the user)
@@ -125,7 +125,8 @@ The Game Page serves as the core gameplay area where users answer Marvel-related
 - **Global Leaderboard**: Track top scores and see where you stand against other players worldwide.
 - **Achievement System**:
   - Unlock achievments based on perfomance, like answering all questions without using jokers.
-  - Achieved question rounds secure the user a guaranteed prize payout.
+  - Reaching certain question rounds secures guaranteed prize payouts.
+- **Joker Effects**: Smashing sound for Hulk or thunder for Thor.
 
 # Technologies Used
 
@@ -179,9 +180,13 @@ This is a guide on how to clone a repository from GitHub.
 
 # Testing
 
+## Mobile Optimization
+
+Marvel Millionaire follows a mobile-first approach, ensuring that all features are fully responsive across devices. The layout, images, and gameplay mechanics have been optimized for mobile users, ensuring an engaging experience on smaller screens without compromising usability. The interface adapts fluidly to various screen sizes, and elements like buttons, text, and navigation remain accessible and functional on smartphones and tablets. Tested extensively using Chrome DevTools and multiple mobile devices, ensuring seamless interaction and optimal performance on mobile platforms.
+
 ## Code Validation
 
-Marvel Millionaire has been validated via W3C HTML Validator, W3C CSS Validator and JSHint. There were several small errors coming up on different places, which were immediately fixed and reported in the bugs section.
+Marvel Millionaire has been validated via W3C HTML Validator, W3C CSS Validator and the JavaSript Code by JSHint. There were several small errors coming up on different places, which were immediately fixed and reported in the bugs section.
 
 W3C Code Validation - index.html:
 
@@ -199,9 +204,13 @@ JSHint Code Validation - JavaScript js files:
 
 ![Image of JSHint Code Validation](/readme-img/jshint_validation.png)
 
-## Responsiveness
+## Accessibility & Responsiveness
 
-Responsiveness was tested by a few different mediums manually (Apple iphone XS, iphone 14pro and iPad Pro), including Chrome Devtools and the [Responsivetesttool](https://responsivetesttool.com/)
+Accessibility was tested by experte.com [Accessibility Audit](https://experte.com/) and manual with WebAIM: Contrast Checker [WebAIM](https://webaim.org/resources/contrastchecker/).
+
+![Image of Accessibility Audit](/readme-img/Accessibility.png)
+
+Responsiveness was tested by a few different mediums manually (Apple iphone XS, iphone 14pro and iPad Pro), including Chrome Devtools and the [Responsivetesttool](https://responsivetesttool.com/).
 
 <details> <summary>See Responsiveness Screenshots</summary>
 
@@ -226,17 +235,15 @@ Laptop:
 
 The website was also put through Lighthouse testing via Chrome Devtools which tests a site under 4 different headings: Performance, Accessibility, Best Practices and SEO and it tests it under mobile and desktop criteria.
 
-Index Page:
+Index Page (Mobile/Desktop):
 
 ![Lighthouse Audit Index Page Mobile](/readme-img/index_mobile_lighthouse.png)
 ![Lighthouse Audit Index Page Desktop](/readme-img/index_desktop_lighthouse.png)
 
-Game Page:
+Game Page (Mobile/Desktop):
 
 ![Lighthouse Audit Game Page Mobile](/readme-img/game_mobile_lighthouse.png)
 ![Lighthouse Audit Game Page Desktop](/readme-img/game_desktop_lighthouse.png)
-
-## Accessibility Testing
 
 ## Manuel Testing
 
@@ -256,18 +263,18 @@ Game Page:
 
 ## Game Page
 
-- **Gameplay Testing**:
-- Verified the initial Ready-Question is loading before game start.
-- Verified the proper loading of questions.
-- Ensured the 50:50 Joker removes two incorrect answers.
-- Confirmed Rocket's hint message appers, Thor's freeze stops the timer, and Hulk's smash functionality delets one incorrect answer.
-- Confirmed the timer functions as expected with a reset for each question.
-- Verified correct answer submission and score updating.
-- Verified the correct functionality of the "Take Money" and "Exit" buttons.
-- Ensured the full countdown, win/lose popups, and score tracking are working.
-- Confirmed correct functionality of question selection and joker options.
-- Ensured countdown timer functions properly after using several interupting buttons.
-- Verified that all game elements are optimized and responsive.
+**Gameplay Testing**:
+ - Verified the initial Ready-Question is loading before game start.
+ - Verified the proper loading of questions.
+ - Ensured the 50:50 Joker removes two incorrect answers.
+ - Confirmed Rocket's hint message appers, Thor's freeze stops the timer, and Hulk's smash functionality delets one incorrect answer.
+ - Confirmed the timer functions as expected with a reset for each question.
+ - Verified correct answer submission and score updating.
+ - Verified the correct functionality of the "Take Money" and "Exit" buttons.
+ - Ensured the full countdown, win/lose popups, and score tracking are working.
+ - Confirmed correct functionality of question selection and joker options.
+ - Ensured countdown timer functions properly after using several interupting buttons.
+ - Verified that all game elements are optimized and responsive.
 
 ## Browser Testing
 

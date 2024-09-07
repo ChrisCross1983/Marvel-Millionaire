@@ -603,15 +603,3 @@ function resetGame() {
   enableUnusedJokers();
   showReadyQuestion();
 }
-
-/* Won game congrats message
-
-function showEndGameMessage() {
-  const congratsMessage = document.getElementById("congrats-message");
-  congratsMessage.classList.remove("hidden");
-
-  document.getElementById("restart-btn").addEventListener("click", function () {
-    congratsMessage.classList.add("hidden");
-    resetGame();
-  });
-}*/
