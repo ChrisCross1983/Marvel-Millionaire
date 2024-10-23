@@ -4,7 +4,7 @@ Welcome to “Marvel Millionaire”, an exciting quiz game inspired by the popul
 
 ![Responsive Mockup](/readme-img/mockup.png)
 
-The live link for Marvel Millionaire can be found here: ["Welcome to Marvel Millionaire!"](https://chriscross1983.github.io/pp2/)
+The live link for Marvel Millionaire can be found here: ["Welcome to Marvel Millionaire!"](https://chriscross1983.github.io/Marvel-Millionaire/)
 
 ## Software Developer
 
@@ -157,7 +157,7 @@ Marvel Millionaire is stored on GitHub. The site was created using VS Code and G
 4. Under source, select branch: main, leave the folder on the root, and click save.
 5. The page will then automatically refresh and provide a link to the published site when it has finished processing.
 
-The live link for Marvel Millionaire can be found here - [Link to deployed live site](https://chriscross1983.github.io/pp2/)
+The live link for Marvel Millionaire can be found here - [Link to deployed live site](https://chriscross1983.github.io/Marvel-Millionaire/)
 
 ## How to fork a repository via GitHub
 
